@@ -3,255 +3,168 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A Little Surprise 🎀</title>
+  <title>A Surprise for Sangam 🎀</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      min-height: 100vh;
       font-family: 'Poppins', sans-serif;
-      color: white;
-      background: #241532;
-    }
-
-    /* FIRST SCREEN: FIRST PHOTO */
-    #homeScreen {
-      background-color: #241532;
-      background-image:
-        linear-gradient(
-          rgba(30, 12, 40, 0.25),
-          rgba(30, 12, 40, 0.40)
-        ),
-        url("./IMG_0e875bbc-ae77-4ed7-b2f5-bde4a97aba7b.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-
-    /* NOT OPEN SCREEN: SECOND PHOTO */
-    #noScreen {
-      background-color: #301727;
-      background-image:
-        linear-gradient(
-          rgba(30, 12, 40, 0.25),
-          rgba(30, 12, 40, 0.40)
-        ),
-        url("./IMG_39507417-bebc-4da9-939e-b0ed63f3845d.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      color: #fff;
+      background: #17121e;
     }
 
     .screen {
       min-height: 100vh;
-      min-height: 100svh;
       display: none;
       align-items: center;
       justify-content: center;
+      padding: 24px;
       text-align: center;
-      padding: 28px 22px;
       position: relative;
-      isolation: isolate;
       overflow: hidden;
+
+      /* Apna direct background image URL yahan lagana */
+      background-image:
+        linear-gradient(#160f2440, #160f2466),
+        url("YOUR_DIRECT_BACKGROUND_IMAGE_URL");
+      background-size: cover;
+      background-position: center;
     }
 
-    .screen.active {
-      display: flex;
-      animation: appear 0.65s ease both;
-    }
+    #homeScreen { display: flex; }
 
     .content {
       width: 100%;
-      max-width: 550px;
-      position: relative;
-      z-index: 2;
+      max-width: 430px;
+      padding: 32px 22px;
+      border: 1px solid #ffffff55;
+      border-radius: 28px;
+      background: #24182b88;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 15px 50px #00000030;
     }
 
     .eyebrow {
       font-size: 12px;
-      letter-spacing: 4px;
+      letter-spacing: 3px;
       text-transform: uppercase;
-      color: #ffe0f2;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
 
     h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(42px, 11vw, 68px);
-      line-height: 1.13;
-      font-weight: 600;
-      margin: 0 auto 20px;
-      text-shadow: 0 3px 30px #30152e;
+      font-size: clamp(27px, 7vw, 38px);
+      line-height: 1.35;
+      margin: 10px 0 18px;
     }
 
     .description {
       font-size: 14px;
-      line-height: 1.8;
-      color: #fff0fa;
-      margin: 0 auto 34px;
-      text-shadow: 0 2px 10px #251329;
+      line-height: 1.9;
+      margin-bottom: 28px;
     }
 
     .buttons {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: 15px;
-      width: 100%;
+      gap: 12px;
     }
 
     button {
-      width: 100%;
-      max-width: 285px;
-      padding: 15px 20px;
-      border-radius: 40px;
-      font: 500 14px 'Poppins', sans-serif;
+      font-family: inherit;
       cursor: pointer;
-      transition: transform .25s, background .25s;
+      -webkit-tap-highlight-color: transparent;
     }
 
-    button:active {
-      transform: scale(.96);
+    .open-btn, .no-btn, .try-btn {
+      border: 0;
+      border-radius: 30px;
+      padding: 14px 20px;
+      font-size: 15px;
+      font-weight: 600;
     }
 
     .open-btn {
-      color: #38223f;
-      background: linear-gradient(120deg, #ffe2f1, #e8b8f4);
-      border: 1px solid #fff2ff;
-      box-shadow: 0 8px 32px #edb4f55a;
+      background: #fff;
+      color: #573b67;
     }
 
     .no-btn {
-      color: #fff1ff;
-      background: #30152b88;
-      border: 1px solid #ffffff88;
-      backdrop-filter: blur(10px);
+      background: #ffffff20;
+      color: #fff;
+      border: 1px solid #ffffff70;
     }
 
-    .tiny-heart {
-      display: block;
-      font-size: 32px;
-      margin-bottom: 20px;
-      animation: heartbeat 1.8s ease-in-out infinite;
-      text-shadow: 0 2px 15px #ffbde8;
+    .lock-icon {
+      font-size: 45px;
+      animation: float 1.5s ease-in-out infinite alternate;
     }
 
-    #noScreen h1 {
-      font-size: clamp(44px, 12vw, 70px);
+    .pin-display {
+      min-height: 48px;
+      margin: 24px 0;
+      font-size: 28px;
+      letter-spacing: 12px;
     }
 
-    .sticker {
-      font-size: 75px;
+    .keypad {
+      display: grid;
+      grid-template-columns: repeat(3, 68px);
+      gap: 12px;
+      justify-content: center;
       margin: 0 auto 22px;
-      filter: drop-shadow(0 8px 20px #ffbad944);
-      animation: float 3s ease-in-out infinite;
     }
 
-    .try-btn {
-      color: #38223f;
-      background: #ffe0ef;
-      border: 0;
-      margin-top: 22px;
-      width: 190px;
+    .key {
+      height: 60px;
+      border: 1px solid #ffffff90;
+      border-radius: 18px;
+      color: white;
+      background: #ffffff24;
+      font-size: 22px;
+      animation: float 1.6s ease-in-out infinite alternate;
+      transition: transform .15s, background .15s;
     }
 
-    #nextScreen {
-      background:
-        radial-gradient(ellipse at top, #78518d 0%, transparent 55%),
-        linear-gradient(145deg, #241532, #49264f, #20152b);
+    .key:active {
+      transform: scale(.88);
+      background: #ffffff55;
     }
 
-    .next-card {
-      border: 1px solid #ffffff35;
-      background: #ffffff12;
-      border-radius: 26px;
-      padding: 32px 20px;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 15px 50px #00000025;
-    }
+    .key:nth-child(even) { animation-delay: .3s; }
 
-    .next-card p {
-      color: #f3dff3;
-      line-height: 1.8;
+    .error {
+      color: #ffd6e5;
+      font-weight: 600;
+      min-height: 28px;
       font-size: 14px;
     }
 
-    .sparkle {
-      position: absolute;
-      color: #ffdaef;
+    .try-btn {
+      color: #fff;
+      background: #ffffff22;
+      border: 1px solid #ffffff70;
+    }
+
+    .hint {
+      font-size: 12px;
       opacity: .85;
-      animation: float 4s ease-in-out infinite;
-      pointer-events: none;
-      text-shadow: 0 2px 15px #ffbde8;
-    }
-
-    .s1 {
-      top: 12%;
-      left: 10%;
-      font-size: 22px;
-    }
-
-    .s2 {
-      top: 23%;
-      right: 10%;
-      font-size: 17px;
-      animation-delay: .8s;
-    }
-
-    .s3 {
-      bottom: 17%;
-      left: 12%;
-      font-size: 16px;
-      animation-delay: 1.3s;
-    }
-
-    .s4 {
-      bottom: 12%;
-      right: 12%;
-      font-size: 24px;
-      animation-delay: .5s;
-    }
-
-    @keyframes appear {
-      from {
-        opacity: 0;
-        transform: translateY(12px) scale(.985);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
+      margin-top: 20px;
     }
 
     @keyframes float {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-12px);
-      }
-    }
-
-    @keyframes heartbeat {
-      0%, 100% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.15);
-      }
+      from { transform: translateY(0); }
+      to { transform: translateY(-4px); }
     }
 
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
-        animation-duration: .01ms !important;
-        transition-duration: .01ms !important;
+        animation: none !important;
+        transition: none !important;
       }
     }
   </style>
@@ -259,105 +172,149 @@
 
 <body>
 
-  <!-- SCREEN 1: FIRST PHOTO -->
-  <main>
-    <section id="homeScreen" class="screen active">
-      <span class="sparkle s1">✧</span>
-      <span class="sparkle s2">✦</span>
-      <span class="sparkle s3">♡</span>
-      <span class="sparkle s4">✧</span>
+  <!-- SCREEN 1: WELCOME -->
+  <section id="homeScreen" class="screen">
+    <div class="content">
+      <div class="eyebrow">A little something for you</div>
 
-      <div class="content">
-        <span class="tiny-heart">♡</span>
+      <h1>I have made<br>something for you...</h1>
 
-        <div class="eyebrow">A little something for you</div>
+      <p class="description">
+        A little surprise, made with love.<br>
+        Will you open it? 🎀
+      </p>
 
-        <h1>I have made<br>something for you...</h1>
+      <div class="buttons">
+        <button class="open-btn" onclick="openPasskey()">
+          Open surprise ♡
+        </button>
 
-        <p class="description">
-          A little surprise, made with love.<br>
-          Will you open it? 🎀
-        </p>
-
-        <div class="buttons">
-          <button class="open-btn" onclick="openSurprise()">
-            Open surprise ♡
-          </button>
-
-          <button class="no-btn" onclick="sayNo()">
-            Not open
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- SCREEN 2: SECOND PHOTO -->
-    <section id="noScreen" class="screen">
-      <span class="sparkle s1">✧</span>
-      <span class="sparkle s2">♡</span>
-      <span class="sparkle s3">✦</span>
-      <span class="sparkle s4">✧</span>
-
-      <div class="content">
-        <div class="sticker">😤💗</div>
-
-        <div class="eyebrow">Excuse me?!</div>
-
-        <h1>How dare you..!!</h1>
-
-        <p class="description">
-          You can't escape that easily! 🥹🎀
-        </p>
-
-        <button class="try-btn" onclick="tryAgain()">
-          ↶ Try again
+        <button class="no-btn" onclick="sayNo()">
+          Not open
         </button>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SCREEN 3: SURPRISE -->
-    <section id="nextScreen" class="screen">
-      <span class="sparkle s1">✧</span>
-      <span class="sparkle s2">♡</span>
-      <span class="sparkle s3">✦</span>
-      <span class="sparkle s4">✧</span>
+  <!-- SCREEN 2: PASSKEY -->
+  <section id="passkeyScreen" class="screen">
+    <div class="content">
+      <div class="lock-icon">🗝️</div>
 
-      <div class="content next-card">
-        <div class="sticker">🎁💗</div>
+      <h1>One little secret...</h1>
+      <p class="description">
+        Enter the passkey to unlock your surprise 💗
+      </p>
 
-        <div class="eyebrow">You chose to open it!</div>
+      <div id="pinDisplay" class="pin-display">○ ○ ○ ○</div>
 
-        <h1>Yayyy! ♡</h1>
+      <div id="keypad" class="keypad"></div>
 
-        <p>
-          Your surprise is waiting here.<br>
-          Next, we'll create the real birthday surprise screen! 🎀
-        </p>
-      </div>
-    </section>
-  </main>
+      <div id="errorMessage" class="error" aria-live="polite"></div>
+
+      <button class="try-btn" onclick="clearPin()">
+        Try Again ↻
+      </button>
+
+      <p class="hint">A special surprise is waiting for you ✨</p>
+    </div>
+  </section>
+
+  <!-- SCREEN 3: UNLOCKED -->
+  <section id="unlockedScreen" class="screen">
+    <div class="content">
+      <div class="lock-icon">🔓</div>
+      <h1>Yayyy, Sangam! 🎀✨</h1>
+      <p class="description">
+        You unlocked the surprise! 💕<br>
+        Your next special interface will go here.
+      </p>
+    </div>
+  </section>
 
   <script>
+    let enteredPin = "";
+
+    const pinDisplay = document.getElementById("pinDisplay");
+    const errorMessage = document.getElementById("errorMessage");
+    const keypad = document.getElementById("keypad");
+
     function showScreen(screenId) {
-      document.querySelectorAll('.screen').forEach(function(screen) {
-        screen.classList.remove('active');
+      document.querySelectorAll(".screen").forEach(screen => {
+        screen.style.display = "none";
       });
 
-      document.getElementById(screenId).classList.add('active');
-      window.scrollTo(0, 0);
+      document.getElementById(screenId).style.display = "flex";
     }
 
-    function openSurprise() {
-      showScreen('nextScreen');
+    function openPasskey() {
+      clearPin();
+      showScreen("passkeyScreen");
     }
 
     function sayNo() {
-      showScreen('noScreen');
+      // Filhaal welcome screen par hi rehna
     }
 
-    function tryAgain() {
-      showScreen('homeScreen');
+    function updateDisplay() {
+      pinDisplay.textContent =
+        enteredPin.length
+          ? enteredPin.split("").map(() => "●").join(" ")
+            + (enteredPin.length < 4 ? " " + "○ ".repeat(4 - enteredPin.length).trim() : "")
+          : "○ ○ ○ ○";
     }
+
+    function clearPin() {
+      enteredPin = "";
+      errorMessage.textContent = "";
+      updateDisplay();
+    }
+
+    function checkPin() {
+      if (enteredPin === "0806") {
+        showScreen("unlockedScreen");
+      } else {
+        errorMessage.textContent = "Wrong Password 🔑";
+        enteredPin = "";
+        updateDisplay();
+      }
+    }
+
+    [1, 2, 3, 4, 5, 6, 7, 8, 9, "⌫", 0, "✓"].forEach(number => {
+      const button = document.createElement("button");
+      button.className = "key";
+      button.textContent = number;
+      button.setAttribute("aria-label", String(number));
+
+      button.addEventListener("click", () => {
+        if (number === "⌫") {
+          enteredPin = enteredPin.slice(0, -1);
+          errorMessage.textContent = "";
+          updateDisplay();
+          return;
+        }
+
+        if (number === "✓") {
+          if (enteredPin.length === 4) checkPin();
+          else errorMessage.textContent = "Enter all 4 digits 🔑";
+          return;
+        }
+
+        if (enteredPin.length < 4) {
+          enteredPin += String(number);
+          errorMessage.textContent = "";
+          updateDisplay();
+
+          if (enteredPin.length === 4) {
+            setTimeout(checkPin, 250);
+          }
+        }
+      });
+
+      keypad.appendChild(button);
+    });
+
+    updateDisplay();
   </script>
 
 </body>
