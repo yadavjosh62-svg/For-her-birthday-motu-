@@ -1,3 +1,5 @@
+HTML
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -684,4 +686,52 @@ p {
 
   $("deleteDigit").addEventListener("click", function () {
     pin = pin.slice(0, -1);
-    upd
+  updateDots();
+    $("pinMessage").textContent = "";
+  });
+
+  $("enterPin").addEventListener("click", checkPin);
+
+  // KISS ANIMATION, THEN HEART
+  function startHeartSequence() {
+    const kiss = $("kiss");
+    const heartScreen = $("heartScreen");
+
+    heartScreen.classList.remove("broken", "heart-ready");
+    kiss.classList.remove("show");
+    void kiss.offsetWidth;
+    kiss.classList.add("show");
+
+    setTimeout(function () {
+      kiss.classList.remove("show");
+
+      if (heartScreen.classList.contains("active")) {
+        heartScreen.classList.add("heart-ready");
+      }
+    }, 2250);
+  }
+
+  // HEART BREAK
+  $("tapHeart").addEventListener("click", function () {
+    $("heartScreen").classList.add("broken");
+  });
+
+  // OPEN LETTER
+  $("openLetter").addEventListener("click", function () {
+    window.showScreen("letterScreen");
+  });
+
+  // NEXT BUTTONS
+  $("letterNext").addEventListener("click", function () {
+    window.showScreen("talkScreen");
+  });
+
+  $("talkNext").addEventListener("click", function () {
+    window.showScreen("nextScreen");
+  });
+
+})();
+</script>
+
+</body>
+</html>
