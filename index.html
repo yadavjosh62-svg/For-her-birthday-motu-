@@ -2,247 +2,160 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Sangam 🎀💕</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Birthday Sangam 🎀</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Pacifico&display=swap');
+* { box-sizing: border-box; }
 
 :root {
-  --pink: #ffd3ec;
-  --purple: #c9a5ff;
-  --deep: #4d286b;
-  --white: #fffaff;
-}
-
-* {
-  box-sizing: border-box;
+  --pink: #ffd8ef;
+  --purple: #d8baff;
+  --dark: #422253;
 }
 
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  color: var(--white);
-  background: #29143f;
-}
-
-button {
-  font-family: inherit;
-  cursor: pointer;
-  border: 0;
-  -webkit-tap-highlight-color: transparent;
+  font-family: Arial, sans-serif;
+  color: white;
+  background: #29153b;
 }
 
 .screen {
   display: none;
+  min-height: 100vh;
   min-height: 100svh;
   width: 100%;
+  padding: 24px 16px;
   position: relative;
   overflow: hidden;
-  padding: 28px 18px;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
   text-align: center;
-  isolation: isolate;
 }
 
-.screen.active {
-  display: flex;
-  animation: appear .7s ease both;
-}
+.screen.active { display: flex; }
 
-.bg-photo::before {
+.bg::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(145deg, rgba(43,16,65,.72), rgba(108,51,123,.48)),
-    url("https://raw.githubusercontent.com/yadavjosh62-svg/For-her-birthday-motu-/main/images/IMG_39507417-bebc-4da9-939e-b0ed63f3845d.jpg");
-  background-size: cover;
-  background-position: center;
-  z-index: -2;
-}
-
-.bg-photo::after {
-  content: "♡";
-  position: absolute;
-  font-size: 240px;
-  color: #fff;
-  opacity: .045;
-  right: -35px;
-  bottom: -75px;
   z-index: -1;
-  pointer-events: none;
-}
-
-h1, h2, p {
-  overflow-wrap: anywhere;
+  background:
+    linear-gradient(#321642a8, #492257b8),
+    url("https://raw.githubusercontent.com/yadavjosh62-svg/For-her-birthday-motu-/main/images/IMG_39507417-bebc-4da9-939e-b0ed63f3845d.jpg")
+    center / cover no-repeat;
 }
 
 h1 {
-  font-size: clamp(2rem, 8vw, 3.7rem);
-  line-height: 1.25;
+  font-size: clamp(30px, 8vw, 48px);
+  line-height: 1.3;
   margin: 12px 0;
 }
 
-h2 {
-  font-size: clamp(1.5rem, 6vw, 2.5rem);
-  line-height: 1.35;
-}
+h2 { line-height: 1.4; }
 
 p {
-  line-height: 1.85;
+  max-width: 600px;
+  line-height: 1.8;
 }
 
 .script {
-  font-family: 'Pacifico', cursive;
-  color: #ffe0f2;
-  text-shadow: 0 0 22px #f7a9ff8c;
+  color: var(--pink);
+  text-shadow: 0 0 18px #ffb9ef88;
 }
 
-.subtitle {
-  font-size: clamp(1rem, 4vw, 1.2rem);
-  max-width: 560px;
+.emoji {
+  font-size: clamp(60px, 18vw, 100px);
+  margin: 10px;
 }
 
 .btn {
-  margin: 10px 5px;
-  padding: 14px 25px;
-  border-radius: 999px;
-  color: #51265e;
-  background: linear-gradient(135deg, #ffe4f5, #d8b9ff);
-  font-size: 1rem;
-  font-weight: 700;
-  box-shadow: 0 7px 24px #1a092d55;
-  transition: transform .2s, box-shadow .2s;
+  border: 0;
+  border-radius: 40px;
+  padding: 14px 24px;
+  margin: 8px;
+  background: linear-gradient(120deg, #ffe2f4, #d9bdff);
+  color: #50275d;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.btn:active {
-  transform: scale(.95);
-}
+.btn:active { transform: scale(.96); }
 
-.btn.secondary {
-  background: #ffffff1a;
+.btn.alt {
   color: white;
+  background: #ffffff20;
   border: 1px solid #ffffff80;
 }
 
-.small-note {
-  font-size: .88rem;
-  opacity: .8;
-}
+.small { font-size: 13px; opacity: .85; }
 
-.floating-heart {
-  position: absolute;
-  bottom: -40px;
-  animation: floatUp 8s linear infinite;
-  opacity: .7;
-  pointer-events: none;
-}
-
-@keyframes appear {
-  from { opacity: 0; transform: translateY(12px); }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes floatUp {
-  from { transform: translateY(0) rotate(0deg); opacity: 0; }
-  15% { opacity: .7; }
-  to { transform: translateY(-110svh) rotate(35deg); opacity: 0; }
+.screen.active > * {
+  animation: fadeIn .45s ease both;
 }
 
-@keyframes bounce {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-}
-
-@keyframes pulse {
-  0%,100% { transform: scale(1); }
-  50% { transform: scale(1.07); }
-}
-
-/* Home */
-.home-title {
-  animation: bounce 2.5s infinite;
-}
-
-.big-emoji {
-  font-size: clamp(4rem, 18vw, 7rem);
-  margin: 12px;
-}
-
-/* Passcode */
-.pin-dots {
+/* PIN screen */
+.dots {
   display: flex;
   gap: 14px;
-  margin: 22px 0;
+  margin: 20px;
 }
 
-.pin-dot {
+.dot {
   width: 15px;
   height: 15px;
   border: 2px solid white;
   border-radius: 50%;
 }
 
-.pin-dot.filled {
-  background: #ffe0f2;
-  box-shadow: 0 0 12px #ffc2f3;
-}
+.dot.filled { background: white; }
 
 .keypad {
   display: grid;
-  grid-template-columns: repeat(3, 68px);
-  gap: 12px;
-  justify-content: center;
-  margin: 12px auto;
+  grid-template-columns: repeat(3, 65px);
+  gap: 10px;
 }
 
 .key {
-  width: 68px;
-  height: 58px;
+  height: 54px;
+  border-radius: 14px;
   color: white;
-  background: #ffffff20;
+  background: #ffffff22;
   border: 1px solid #ffffff70;
-  border-radius: 17px;
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 20px;
 }
 
-#pinMessage {
-  min-height: 28px;
-  color: #ffe0f2;
-}
+#pinMessage { min-height: 24px; }
 
 /* Heart */
-.heart-wrap {
-  position: relative;
-  font-size: clamp(7rem, 32vw, 12rem);
+.heart {
+  font-size: clamp(100px, 30vw, 180px);
   cursor: pointer;
-  animation: pulse 1.4s infinite;
-  user-select: none;
+  transition: transform .5s, opacity .5s;
 }
 
-.heart-wrap.broken {
-  animation: breakHeart .9s forwards;
-}
-
-@keyframes breakHeart {
-  0% { transform: scale(1); opacity: 1; }
-  40% { transform: scale(1.25) rotate(-8deg); }
-  100% { transform: scale(.2) rotate(25deg); opacity: 0; }
+.heart.broken {
+  transform: scale(1.8) rotate(20deg);
+  opacity: 0;
 }
 
 /* Envelope */
 .envelope {
-  width: min(300px, 82vw);
-  height: 190px;
   position: relative;
-  margin: 28px auto;
-  background: #f6d5f2;
+  width: min(300px, 85vw);
+  height: 180px;
+  margin: 25px auto;
+  background: #f8d8ef;
   border-radius: 8px;
-  box-shadow: 0 15px 40px #15062270;
+  box-shadow: 0 12px 30px #170a24aa;
   cursor: pointer;
 }
 
@@ -250,281 +163,217 @@ p {
   content: "";
   position: absolute;
   inset: 0;
-  background: #e8bde9;
-  clip-path: polygon(0 0, 50% 58%, 100% 0);
-  border-radius: 8px;
-  z-index: 2;
+  background: #eabbe3;
+  clip-path: polygon(0 0, 50% 60%, 100% 0);
 }
 
 .envelope::after {
   content: "💌";
   position: absolute;
-  font-size: 56px;
-  top: 64px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
+  left: 0;
+  right: 0;
+  top: 60px;
+  font-size: 55px;
 }
 
-.envelope-label {
+.envelope span {
   position: absolute;
-  bottom: 13px;
-  width: 100%;
-  color: #63366f;
-  font-weight: 700;
+  bottom: 12px;
+  left: 0;
+  right: 0;
+  color: #51285c;
+  font-weight: bold;
 }
 
 /* Letter */
-.letter-paper {
-  width: min(680px, 100%);
-  max-height: 68svh;
+.letter {
+  width: min(650px, 100%);
+  max-height: 65vh;
   overflow-y: auto;
-  padding: 26px 23px;
+  background: #fff8f0;
+  color: #59365e;
+  padding: 24px;
   border-radius: 16px;
-  color: #5c3267;
-  background:
-    linear-gradient(#fffaf1eF, #fffaf1f2),
-    url("https://raw.githubusercontent.com/yadavjosh62-svg/For-her-birthday-motu-/main/images/IMG_3e9b8355-3a40-4946-9f1b-4981040099e9.jpg");
-  background-size: cover;
-  box-shadow: 0 12px 45px #17072780;
   text-align: left;
-  animation: letterRise 1s ease both;
+  line-height: 1.8;
 }
 
-@keyframes letterRise {
-  from { transform: translateY(80px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-.letter-paper h2 {
-  text-align: center;
-  font-size: 1.6rem;
-}
-
-.letter-paper p {
-  font-size: .96rem;
-}
+.letter h2 { text-align: center; }
 
 /* Gallery */
-.gallery-screen {
-  padding: 22px 14px 30px;
+.gallery {
+  justify-content: flex-start;
+  padding-top: 28px;
+  padding-bottom: 35px;
 }
 
-.gallery-screen::before {
-  background-image:
-    linear-gradient(135deg, rgba(36,13,50,.68), rgba(85,36,108,.5)),
-    url("https://raw.githubusercontent.com/yadavjosh62-svg/For-her-birthday-motu-/main/images/IMG_c54030e2-ca78-462f-8daa-24180c41fbba.jpg");
-  background-size: cover;
-  background-position: center;
+.gallery::before {
+  background:
+    linear-gradient(#32164288, #321642a8),
+    url("https://raw.githubusercontent.com/yadavjosh62-svg/For-her-birthday-motu-/main/images/IMG_c54030e2-ca78-462f-8daa-24180c41fbba.jpg")
+    center / cover no-repeat;
 }
 
-.gallery-heading {
-  margin: 0 0 12px;
-  font-size: clamp(1.8rem, 7vw, 2.7rem);
-  text-shadow: 0 3px 18px #291036;
+.gallery-title {
+  font-size: clamp(28px, 7vw, 42px);
+  margin: 5px 0;
 }
 
-.gallery-subtitle {
-  margin: 0 0 20px;
-  font-size: .95rem;
-}
-
-.memory-list {
+.memories {
   width: 100%;
-  max-width: 780px;
+  max-width: 760px;
   display: flex;
   flex-direction: column;
   gap: 26px;
+  margin-top: 20px;
 }
 
-.memory-row {
+.memory {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 18px;
+  gap: 14px;
   width: 100%;
   text-align: left;
 }
 
-.memory-row.reverse {
-  flex-direction: row-reverse;
-}
+.memory.reverse { flex-direction: row-reverse; }
 
-.camera-stage {
-  width: min(43%, 270px);
-  flex-shrink: 0;
+.camera {
   position: relative;
+  width: 43%;
+  max-width: 260px;
   aspect-ratio: 4 / 5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-shrink: 0;
 }
 
-.camera-img {
+.camera-body {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 8px 10px #16082170);
-  position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 
-/* Photo overlay: adjust these percentages if the screen differs
-   on your camera picture. */
+/* Photo layer is above the camera image.
+   Adjust these values to match your camera's screen. */
 .camera-photo {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   left: 25%;
   top: 24%;
   width: 50%;
   height: 42%;
   object-fit: cover;
   border-radius: 2px;
-  background: #f5d8ff;
 }
 
-.memory-message {
+.memory-text {
   flex: 1;
   min-width: 0;
-  font-size: clamp(.85rem, 3.2vw, 1.05rem);
-  line-height: 1.75;
-  color: #fff7ff;
-  text-shadow: 0 2px 9px #210e2c;
+  font-size: clamp(13px, 3.3vw, 17px);
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+  text-shadow: 0 2px 8px #21102c;
 }
 
-.memory-message .number {
+.memory-number {
   display: block;
-  color: #ffd4f1;
-  font-size: .78rem;
   margin-bottom: 5px;
-  letter-spacing: 2px;
+  color: var(--pink);
+  font-size: 12px;
+  letter-spacing: 1px;
 }
 
 .gallery-footer {
-  font-family: 'Pacifico', cursive;
-  font-size: clamp(1.5rem, 6vw, 2.2rem);
-  color: #ffe0f6;
-  margin: 25px 0 10px;
-  text-shadow: 0 0 20px #ff9ae8;
+  font-size: clamp(25px, 7vw, 38px);
+  color: var(--pink);
+  margin: 28px 0 12px;
 }
 
-/* Final screen */
-.final-star {
-  font-size: 5rem;
-  animation: pulse 1.5s infinite;
-}
-
-@media (max-width: 420px) {
-  .memory-row, .memory-row.reverse {
-    gap: 10px;
-  }
-
-  .camera-stage {
-    width: 43%;
-  }
-
-  .memory-message {
-    font-size: .82rem;
-    line-height: 1.6;
-  }
-
-  .gallery-screen {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  .letter-paper {
-    padding: 20px 17px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: .01ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
-  }
+@media (max-width: 380px) {
+  .screen { padding-left: 11px; padding-right: 11px; }
+  .memory { gap: 9px; }
+  .memory-text { font-size: 12px; }
+  .letter { padding: 17px; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- 1. HOME -->
-<section class="screen bg-photo active" id="homeScreen">
-  <div class="big-emoji">🎀💗</div>
-  <h1 class="script home-title">Happy Birthday,<br>Sangam ✨💕</h1>
-  <p class="subtitle">A little dreamy surprise for my special one. 👑🫶🏻</p>
-  <button class="btn" onclick="showScreen('pinScreen')">Open Surprise ♡</button>
-  <button class="btn secondary" onclick="showScreen('notOpenScreen')">Not Open 🙈</button>
-  <p class="small-note">Made with love, just for you ❤️‍🩹</p>
+<!-- HOME -->
+<section class="screen bg active" id="home">
+  <div class="emoji">🎀💕</div>
+  <h1 class="script">Happy Birthday<br>Sangam ✨</h1>
+  <p>A little surprise for my special one. 👑🫶🏻</p>
+  <button class="btn" onclick="go('pin')">Open Surprise ♡</button>
+  <button class="btn alt" onclick="go('notOpen')">Not Open 🙈</button>
 </section>
 
-<!-- 2. NOT OPEN -->
-<section class="screen bg-photo" id="notOpenScreen">
-  <div class="big-emoji">😤🙈</div>
+<!-- NOT OPEN -->
+<section class="screen bg" id="notOpen">
+  <div class="emoji">😤🙈</div>
   <h1>How dare you!!</h1>
-  <p class="subtitle">Mera surprise open nahi karogi? 😭🎀</p>
-  <button class="btn" onclick="showScreen('homeScreen')">Okay, try again 💗</button>
+  <p>Mera surprise open nahi karogi? 🥹🎀</p>
+  <button class="btn" onclick="go('home')">Okay, try again 💗</button>
 </section>
 
-<!-- 3. PASSCODE -->
-<section class="screen bg-photo" id="pinScreen">
-  <div class="big-emoji">🔐💌</div>
+<!-- PASSCODE -->
+<section class="screen bg" id="pin">
+  <div class="emoji">🔐💌</div>
   <h2>Enter our secret code 🎀</h2>
-  <p class="subtitle">A little secret just for you, Princess.</p>
-  <div class="pin-dots" id="pinDots">
-    <span class="pin-dot"></span>
-    <span class="pin-dot"></span>
-    <span class="pin-dot"></span>
-    <span class="pin-dot"></span>
+  <div class="dots">
+    <span class="dot"></span><span class="dot"></span>
+    <span class="dot"></span><span class="dot"></span>
   </div>
 
   <div class="keypad">
-    <button class="key" onclick="addPin('1')">1</button>
-    <button class="key" onclick="addPin('2')">2</button>
-    <button class="key" onclick="addPin('3')">3</button>
-    <button class="key" onclick="addPin('4')">4</button>
-    <button class="key" onclick="addPin('5')">5</button>
-    <button class="key" onclick="addPin('6')">6</button>
-    <button class="key" onclick="addPin('7')">7</button>
-    <button class="key" onclick="addPin('8')">8</button>
-    <button class="key" onclick="addPin('9')">9</button>
-    <button class="key" onclick="clearPin()">⌫</button>
-    <button class="key" onclick="addPin('0')">0</button>
-    <button class="key" onclick="checkPin()">✓</button>
+    <button class="key" onclick="digit('1')">1</button>
+    <button class="key" onclick="digit('2')">2</button>
+    <button class="key" onclick="digit('3')">3</button>
+    <button class="key" onclick="digit('4')">4</button>
+    <button class="key" onclick="digit('5')">5</button>
+    <button class="key" onclick="digit('6')">6</button>
+    <button class="key" onclick="digit('7')">7</button>
+    <button class="key" onclick="digit('8')">8</button>
+    <button class="key" onclick="digit('9')">9</button>
+    <button class="key" onclick="erase()">⌫</button>
+    <button class="key" onclick="digit('0')">0</button>
+    <button class="key" onclick="verifyPin()">✓</button>
   </div>
 
-  <p id="pinMessage" aria-live="polite">Hint: our special code 💗</p>
-  <button class="btn secondary" onclick="showScreen('homeScreen')">Go Back</button>
+  <p id="pinMessage">Hint: our special code 💗</p>
+  <button class="btn alt" onclick="go('home')">Go Back</button>
 </section>
 
-<!-- 4. KISS MESSAGE -->
-<section class="screen bg-photo" id="kissScreen">
-  <h1 class="script" id="kissText">umhaaaaaa 💋😚🎀</h1>
-  <p class="subtitle">Sending you the biggest birthday kiss! 💗</p>
+<!-- KISS -->
+<section class="screen bg" id="kiss">
+  <div class="emoji">💋😚🎀</div>
+  <h1 class="script">Umhaaaaaa!</h1>
+  <p>Sending you the biggest birthday kiss. 💗</p>
 </section>
 
-<!-- 5. HEART -->
-<section class="screen bg-photo" id="heartScreen">
-  <h2 class="script">A little piece of my heart ❤️</h2>
-  <div class="heart-wrap" id="bigHeart" onclick="breakHeart()">❤️</div>
-  <p class="subtitle" id="heartHint">Tap here, Princess 🫶🏻</p>
+<!-- HEART -->
+<section class="screen bg" id="heartScreen">
+  <h1 class="script">A little piece of my heart</h1>
+  <div class="heart" id="heart" onclick="openHeart()">❤️</div>
+  <p>Tap here, Princess 🫶🏻</p>
 </section>
 
-<!-- 6. ENVELOPE -->
-<section class="screen bg-photo" id="envelopeScreen">
+<!-- ENVELOPE -->
+<section class="screen bg" id="envelopeScreen">
   <h1 class="script">A letter for you 💌</h1>
-  <p class="subtitle">Something from my heart to yours.</p>
-  <div class="envelope" onclick="showScreen('letterScreen')">
-    <div class="envelope-label">Tap to open 💗</div>
+  <p>Something from my heart to yours.</p>
+  <div class="envelope" onclick="go('letter')">
+    <span>Tap to open 💗</span>
   </div>
-  <button class="btn" onclick="showScreen('letterScreen')">Open My Letter 💌</button>
+  <button class="btn" onclick="go('letter')">Open My Letter 💌</button>
 </section>
 
-<!-- 7. BIRTHDAY LETTER -->
-<section class="screen bg-photo" id="letterScreen">
-  <div class="letter-paper">
+<!-- LETTER -->
+<section class="screen bg" id="letter">
+  <div class="letter">
     <h2>🎀✨ Happy Birthday, My Princess! 👑💗 ✨🎂</h2>
 
     <p>Happy Birthday to the most beautiful princess! 🥹❤️ May your life always be filled with endless happiness, love, and magical moments. May your beautiful smile never fade, and may all your dreams come true. 🫶🏻💖</p>
@@ -533,111 +382,101 @@ p {
 
     <p>I pray that you always shine like a star, bloom like a flower, and live like the queen you are. 💫🎀 Never forget how precious and special you are. ❤️✨</p>
 
-    <p><strong>Happy Birthday once again, my princess!</strong> 🎂👑💋 May your special day be as beautiful as your heart, as sweet as your smile, and as magical as your dreams. 🩷🫂</p>
+    <p><b>Happy Birthday once again, my princess!</b> 🎂👑💋 May your special day be as beautiful as your heart, as sweet as your smile, and as magical as your dreams. 🩷🫂</p>
 
-    <p><strong>Keep smiling, keep shining, and always stay happy, my princess!</strong> 🎀💗✨</p>
+    <p><b>Keep smiling, keep shining, and always stay happy, my princess!</b> 🎀💗✨</p>
   </div>
-  <button class="btn" onclick="showScreen('messageScreen')">Next, my Princess 💗 ➜</button>
+  <button class="btn" onclick="go('messages')">Next, my Princess 💗 ➜</button>
 </section>
 
-<!-- 8. CHARACTER MESSAGES -->
-<section class="screen bg-photo" id="messageScreen">
-  <div class="big-emoji">🎂🫂🎀</div>
+<!-- BIRTHDAY MESSAGES -->
+<section class="screen bg" id="messages">
+  <div class="emoji">🎂🫂🎀</div>
   <h1 class="script">Happy Birthday Sangam ✨💕</h1>
-  <p class="subtitle">May God bless you 🪷🫂</p>
-  <h2>I lub uhhhhhhhhh 😚💋🎀</h2>
-  <p class="subtitle">Hmr baccha 💗</p>
-  <button class="btn" onclick="showScreen('memoryScreen')">Our Memories 📸 ➜</button>
+  <h2>May God bless you 🪷🫂</h2>
+  <p>I lub uhhhhhhhhh 😚💋🎀</p>
+  <p>Hmr baccha 💗</p>
+  <button class="btn" onclick="go('gallery')">Our Memories 📸 ➜</button>
 </section>
 
-<!-- 9. PHOTO GALLERY -->
-<section class="screen bg-photo gallery-screen" id="memoryScreen">
-  <h1 class="script gallery-heading">Our Little Memories 🎀</h1>
-  <p class="gallery-subtitle">Every memory with you is special, Sangam ❤️‍🩹</p>
+<!-- GALLERY -->
+<section class="screen bg gallery" id="gallery">
+  <h1 class="script gallery-title">Our Little Memories 🎀</h1>
+  <p>Every memory with you is special, Sangam ❤️‍🩹</p>
 
-  <div class="memory-list">
+  <div class="memories">
 
-    <!-- MEMORY 1 -->
-    <div class="memory-row">
-      <div class="camera-stage">
-        <img class="camera-img"
+    <div class="memory">
+      <div class="camera">
+        <img class="camera-body"
           src="https://raw.githubusercontent.com/yadavjosh62-svg/For-her-birthday-motu-/main/images/IMG_09041feb-2f92-4711-9d35-9cc1e962bf1b.jpg"
-          alt="Camera one"
-          onerror="this.style.opacity='.35'">
+          alt="Camera 1">
         <img class="camera-photo"
           src="https://raw.githubusercontent.com/yadavjosh62-svg/For-her-birthday-motu-/main/images/IMG-20260919-WA0015.jpg"
-          alt="Our photo one">
+          alt="Our memory 1">
       </div>
-      <div class="memory-message">
-        <span class="number">MEMORY 01 ♡</span>
+      <div class="memory-text">
+        <span class="memory-number">MEMORY 01 ♡</span>
         To my favorite girl, Sangam 🎀❤️‍🩹 May all your dreams come true, Princess, and may happiness follow you everywhere. 💗🫶🏻
       </div>
     </div>
 
-    <!-- MEMORY 2 -->
-    <div class="memory-row reverse">
-      <div class="camera-stage">
-        <img class="camera-img"
+    <div class="memory reverse">
+      <div class="camera">
+        <img class="camera-body"
           src="https://raw.githubusercontent.com/yadavjosh62-svg/For-her-birthday-motu-/main/images/IMG_230c4d7a-31e1-4080-8eca-8321f18ae06f.jpg"
-          alt="Camera two"
-          onerror="this.style.opacity='.35'">
+          alt="Camera 2">
         <img class="camera-photo"
           src="https://raw.githubusercontent.com/yadavjosh62-svg/For-her-birthday-motu-/main/images/IMG-20260919-WA0016.jpg"
-          alt="Our photo two">
+          alt="Our memory 2">
       </div>
-      <div class="memory-message">
-        <span class="number">MEMORY 02 ♡</span>
+      <div class="memory-text">
+        <span class="memory-number">MEMORY 02 ♡</span>
         🎀❤️‍🩹 Sangam, you will always be my favorite person in this entire world. 🫶🏻💗
       </div>
     </div>
 
-    <!-- MEMORY 3 -->
-    <div class="memory-row">
-      <div class="camera-stage">
-        <img class="camera-img"
+    <div class="memory">
+      <div class="camera">
+        <img class="camera-body"
           src="https://raw.githubusercontent.com/yadavjosh62-svg/For-her-birthday-motu-/main/images/IMG_81420847-9c99-41d8-90b2-e958cf0d2a0e.jpg"
-          alt="Camera three"
-          onerror="this.style.opacity='.35'">
+          alt="Camera 3">
         <img class="camera-photo"
           src="https://raw.githubusercontent.com/yadavjosh62-svg/For-her-birthday-motu-/main/images/IMG_20260517_222211_990.webp"
-          alt="Our photo three">
+          alt="Our memory 3">
       </div>
-      <div class="memory-message">
-        <span class="number">MEMORY 03 ♡</span>
+      <div class="memory-text">
+        <span class="memory-number">MEMORY 03 ♡</span>
         💕 Not every princess wears a crown; some just have the most beautiful smile. 🥹✨
       </div>
     </div>
 
-    <!-- MEMORY 4 -->
-    <div class="memory-row reverse">
-      <div class="camera-stage">
-        <img class="camera-img"
+    <div class="memory reverse">
+      <div class="camera">
+        <img class="camera-body"
           src="https://raw.githubusercontent.com/yadavjosh62-svg/For-her-birthday-motu-/main/images/IMG_894d8f69-d697-4630-bde6-79ce0b2441b9.jpg"
-          alt="Camera four"
-          onerror="this.style.opacity='.35'">
+          alt="Camera 4">
         <img class="camera-photo"
           src="https://raw.githubusercontent.com/yadavjosh62-svg/For-her-birthday-motu-/main/images/IMG_20260904_233147_485.jpg"
-          alt="Our photo four">
+          alt="Our memory 4">
       </div>
-      <div class="memory-message">
-        <span class="number">MEMORY 04 ♡</span>
+      <div class="memory-text">
+        <span class="memory-number">MEMORY 04 ♡</span>
         Sangam 🎀✨ May your life be filled with beautiful memories, endless love, and magical moments. Happy Birthday, Princess! 🎂❤️‍🩹
       </div>
     </div>
 
-    <!-- MEMORY 5 -->
-    <div class="memory-row">
-      <div class="camera-stage">
-        <img class="camera-img"
+    <div class="memory">
+      <div class="camera">
+        <img class="camera-body"
           src="https://raw.githubusercontent.com/yadavjosh62-svg/For-her-birthday-motu-/main/images/IMG_ef350095-07d4-4061-9197-611bd3b88a91.jpg"
-          alt="Camera five"
-          onerror="this.style.opacity='.35'">
+          alt="Camera 5">
         <img class="camera-photo"
           src="https://raw.githubusercontent.com/yadavjosh62-svg/For-her-birthday-motu-/main/images/IMG_20260904_233147_485.jpg"
-          alt="Our photo five">
+          alt="Our memory 5">
       </div>
-      <div class="memory-message">
-        <span class="number">MEMORY 05 ♡</span>
+      <div class="memory-text">
+        <span class="memory-number">MEMORY 05 ♡</span>
         🎀💗 Sangam, if I could choose again, I would still choose you in every lifetime. ♾️❤️
       </div>
     </div>
@@ -645,118 +484,110 @@ p {
   </div>
 
   <div class="gallery-footer">For uhhh 🎀❤️‍🩹</div>
-  <button class="btn" onclick="showScreen('finalScreen')">One Last Surprise ✨ ➜</button>
+  <button class="btn" onclick="go('final')">One Last Surprise ✨ ➜</button>
 </section>
 
-<!-- 10. FINAL SURPRISE -->
-<section class="screen bg-photo" id="finalScreen">
-  <div class="final-star">💗✨👑</div>
+<!-- FINAL -->
+<section class="screen bg" id="final">
+  <div class="emoji">💗✨👑</div>
   <h1 class="script">There's more, Sangam!</h1>
-  <p class="subtitle">You deserve a thousand more smiles, a million hugs, and all the love in the world. 🎀🫶🏻</p>
+  <p>You deserve a thousand more smiles, a million hugs, and all the love in the world. 🎀🫶🏻</p>
   <h2>Happy Birthday, My Princess! 🎂💕</h2>
-  <p class="subtitle">Forever your special person ❤️‍🩹</p>
-  <button class="btn" onclick="showScreen('homeScreen')">See Surprise Again ♡</button>
+  <p>Forever your special person ❤️‍🩹</p>
+  <button class="btn" onclick="go('home')">See Surprise Again ♡</button>
 </section>
 
 <script>
-let currentPin = "";
-const correctPin = "0806";
-let heartAlreadyBroken = false;
+const screens = document.querySelectorAll(".screen");
+let enteredPin = "";
+const secretPin = "0806";
+let heartOpened = false;
+let pinTimer = null;
 
-function showScreen(id) {
-  document.querySelectorAll(".screen").forEach(screen => {
+function go(id) {
+  screens.forEach(function(screen) {
     screen.classList.remove("active");
   });
 
-  const target = document.getElementById(id);
-  if (!target) return;
+  const nextScreen = document.getElementById(id);
 
-  target.classList.add("active");
-  window.scrollTo({ top: 0, behavior: "instant" });
+  if (!nextScreen) {
+    alert("Screen not found: " + id);
+    return;
+  }
 
-  if (id === "pinScreen") {
-    currentPin = "";
-    updatePinDots();
+  nextScreen.classList.add("active");
+  window.scrollTo(0, 0);
+
+  if (id === "pin") {
+    enteredPin = "";
+    updateDots();
     document.getElementById("pinMessage").textContent =
       "Hint: our special code 💗";
   }
 
   if (id === "heartScreen") {
-    heartAlreadyBroken = false;
-    const heart = document.getElementById("bigHeart");
-    heart.classList.remove("broken");
-    heart.textContent = "❤️";
-    document.getElementById("heartHint").textContent =
-      "Tap here, Princess 🫶🏻";
+    heartOpened = false;
+    document.getElementById("heart").classList.remove("broken");
   }
 }
 
-function updatePinDots() {
-  document.querySelectorAll(".pin-dot").forEach((dot, index) => {
-    dot.classList.toggle("filled", index < currentPin.length);
+function updateDots() {
+  document.querySelectorAll(".dot").forEach(function(dot, index) {
+    dot.classList.toggle("filled", index < enteredPin.length);
   });
 }
 
-function addPin(number) {
-  if (currentPin.length >= 4) return;
-  currentPin += number;
-  updatePinDots();
+function digit(number) {
+  if (enteredPin.length >= 4) return;
 
-  if (currentPin.length === 4) {
-    checkPin();
+  enteredPin += number;
+  updateDots();
+
+  if (enteredPin.length === 4) {
+    verifyPin();
   }
 }
 
-function clearPin() {
-  currentPin = currentPin.slice(0, -1);
-  updatePinDots();
+function erase() {
+  enteredPin = enteredPin.slice(0, -1);
+  updateDots();
   document.getElementById("pinMessage").textContent = "";
 }
 
-function checkPin() {
-  if (currentPin === correctPin) {
-    document.getElementById("pinMessage").textContent = "Correct! 💗";
-    showScreen("kissScreen");
-
-    setTimeout(() => {
-      if (document.getElementById("kissScreen").classList.contains("active")) {
-        showScreen("heartScreen");
-      }
-    }, 2400);
-  } else {
+function verifyPin() {
+  if (enteredPin !== secretPin) {
     document.getElementById("pinMessage").textContent =
-      "Oops! Try again, Princess 🥹💕";
-    currentPin = "";
-    updatePinDots();
+      "Wrong code! Try again, Princess 🥹💕";
+    enteredPin = "";
+    updateDots();
+    return;
   }
-}
 
-function breakHeart() {
-  if (heartAlreadyBroken) return;
-  heartAlreadyBroken = true;
+  document.getElementById("pinMessage").textContent = "Correct! 💗";
+  go("kiss");
 
-  const heart = document.getElementById("bigHeart");
-  heart.classList.add("broken");
-  document.getElementById("heartHint").textContent =
-    "My heart is always yours ❤️‍🩹";
-
-  setTimeout(() => {
-    if (document.getElementById("heartScreen").classList.contains("active")) {
-      showScreen("envelopeScreen");
+  clearTimeout(pinTimer);
+  pinTimer = setTimeout(function() {
+    if (document.getElementById("kiss").classList.contains("active")) {
+      go("heartScreen");
     }
-  }, 1000);
+  }, 2200);
 }
 
-/* Floating hearts */
-function addFloatingHeart() {
-  const activeScreen = document.querySelector(".screen.active");
-  if (!activeScreen) return;
+function openHeart() {
+  if (heartOpened) return;
+  heartOpened = true;
 
-  const heart = document.createElement("span");
-  heart.className = "floating-heart";
-  heart.textContent = ["💗", "💕", "💖", "✨", "🎀"][
-    Math.floor(Math.random() * 5)
-  ];
-  heart.style.left = Math.random() * 95 + "%";
-  heart.style.fontSize = (16 + Math.random() * 20) + "px";
-  heart.styl
+  document.getElementById("heart").classList.add("broken");
+
+  setTimeout(function() {
+    if (document.getElementById("heartScreen").classList.contains("active")) {
+      go("envelopeScreen");
+    }
+  }, 650);
+}
+</script>
+
+</body>
+</html>
