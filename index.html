@@ -4,758 +4,803 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For My Princess 🎀</title>
+<title>For Sangam 🎀💗</title>
 
 <style>
 :root {
-  --home: url("https://raw.githubusercontent.com/yadavjosh62-svg/For-her-birthday-motu-/main/images/1792684578534.jpg");
-  --background: url("https://raw.githubusercontent.com/yadavjosh62-svg/For-her-birthday-motu-/main/images/IMG_39507417-bebc-4da9-939e-b0ed63f3845d.jpg");
-  --envelope: url("https://raw.githubusercontent.com/yadavjosh62-svg/For-her-birthday-motu-/main/images/il_fullxfull.8189381375_1wod.jpg");
-  --paper: url("https://raw.githubusercontent.com/yadavjosh62-svg/For-her-birthday-motu-/main/images/IMG_3e9b8355-3a40-4946-9f1b-4981040099e9.jpg");
+  --pink: #ff4e83;
+  --purple: #8f5ad7;
+  --cream: #fff4e9;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
 
 body {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
+  background: #21152f;
   color: white;
-  background: #4b2855;
+  overflow: hidden;
 }
 
 button {
+  font: inherit;
   cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-  font-size: 18px;
+  border: none;
 }
 
 .screen {
   display: none;
-  min-height: 100vh;
-  min-height: 100svh;
-  padding: 80px 18px 35px;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
+  overflow: hidden;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   text-align: center;
-  position: relative;
-  overflow: hidden;
-  background-image: linear-gradient(#28102b55,#28102b77),var(--background);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  padding: 24px 18px;
+  isolation: isolate;
 }
 
-.screen.active { display: flex; }
+.screen.active {
+  display: flex;
+  animation: screenIn .55s ease both;
+}
+
+@keyframes screenIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.bg-photo {
+  background-image:
+    linear-gradient(180deg, rgba(27,10,47,.32), rgba(27,10,47,.66)),
+    url("https://raw.githubusercontent.com/yadavjosh62-svg/For-her-birthday-motu-/main/images/IMG_39507417-bebc-4da9-939e-b0ed63f3845d.jpg");
+  background-size: cover;
+  background-position: center;
+}
 
 #home {
-  background-image: linear-gradient(#32103a55,#32103a66),var(--home);
+  background-image:
+    linear-gradient(180deg, rgba(34,12,48,.28), rgba(34,12,48,.68)),
+    url("https://raw.githubusercontent.com/yadavjosh62-svg/For-her-birthday-motu-/main/images/1792684578534.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
-#dare, #passcode {
-  background-image: linear-gradient(135deg,#492755,#a866a1,#59345f);
-}
-
-.content {
-  width: 100%;
-  max-width: 600px;
-  margin: auto;
-  padding: 25px 12px;
-  position: relative;
-  z-index: 2;
+h1, h2, p {
+  margin-top: 10px;
+  margin-bottom: 16px;
 }
 
 h1 {
-  font-size: clamp(35px,9vw,58px);
-  line-height: 1.2;
-  font-weight: normal;
-  text-shadow: 0 3px 15px #30112d99;
+  font-size: clamp(2.1rem, 8vw, 4rem);
+  text-shadow: 0 3px 18px #4a174f;
 }
 
 p {
-  font-size: clamp(17px,4.5vw,22px);
-  line-height: 1.8;
+  font-size: 1.15rem;
+  line-height: 1.7;
 }
 
-.eyebrow {
-  font: 14px/1.7 Arial,sans-serif;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-}
-
-.btn {
-  display: block;
-  width: min(100%,330px);
-  margin: 17px auto;
-  padding: 17px 20px;
-  border: 2px solid white;
-  border-radius: 50px;
-  background: #fff5fa;
-  color: #643450;
+button.main-btn {
+  margin: 10px;
+  padding: 14px 25px;
+  border-radius: 40px;
+  color: #fff;
+  font-size: 1.12rem;
   font-weight: bold;
-  box-shadow: 0 5px 20px #230b2b44;
+  background: linear-gradient(135deg, #ff5795, #a45cff);
+  box-shadow: 0 8px 28px #18091f66;
+  transition: transform .2s;
 }
 
-.btn:active { transform: scale(.96); }
-
-.btn.secondary {
-  color: white;
-  background: #ffffff20;
+button.main-btn:active {
+  transform: scale(.94);
 }
 
-#musicToggle {
-  position: fixed;
+button.secondary-btn {
+  background: rgba(255,255,255,.16);
+  border: 1px solid #ffffff80;
+}
+
+.music-btn {
   z-index: 100;
-  top: 12px;
-  right: 12px;
-  width: 58px;
-  height: 58px;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  border: 2px solid white;
-  background: #48234ddd;
+  background: #fff1;
   color: white;
-  font-size: 27px;
+  font-size: 24px;
+  border: 1px solid #ffffff80;
+  backdrop-filter: blur(8px);
 }
 
-/* PASSKEY */
-.lock {
-  font-size: 62px;
-  margin-bottom: 12px;
-}
+/* PASSCODE */
 
-.dots {
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-  margin: 25px;
+#pinDisplay {
+  font-size: 2.5rem;
+  letter-spacing: 12px;
+  min-height: 55px;
+  margin: 15px;
 }
-
-.dot {
-  width: 15px;
-  height: 15px;
-  border: 2px solid white;
-  border-radius: 50%;
-}
-
-.dot.filled { background: white; }
 
 .keypad {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 70px);
   gap: 12px;
-  max-width: 330px;
-  margin: auto;
+  justify-content: center;
 }
 
-.key {
-  height: 64px;
-  border: 1px solid #ffffffaa;
-  border-radius: 17px;
+.keypad button {
+  width: 70px;
+  height: 62px;
+  border-radius: 20px;
+  font-size: 1.5rem;
   color: white;
-  background: #ffffff20;
-  font-size: 25px;
+  background: #ffffff22;
+  border: 1px solid #ffffff70;
+  backdrop-filter: blur(6px);
 }
 
-#pinMessage { min-height: 30px; }
-
-/* DARE */
-.dudu {
-  font-size: 110px;
-  animation: bounce 1s infinite alternate;
+#pinMessage {
+  min-height: 28px;
+  color: #ffe2ee;
 }
 
-@keyframes bounce {
-  to { transform: translateY(-12px) rotate(4deg); }
-}
+/* KISS TRANSITION */
 
-/* KISS ANIMATION */
-#kiss {
-  position: fixed;
-  z-index: 90;
-  inset: 0;
+#kissOverlay {
   display: none;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: #c99ae9;
-}
-
-#kiss.show { display: flex; }
-
-#kiss span {
-  font: bold clamp(30px,8vw,55px) Arial,sans-serif;
-  white-space: nowrap;
-  animation: kissZoom 2.2s forwards;
-}
-
-@keyframes kissZoom {
-  0% { transform: translateY(-100vh) scale(.2); opacity: 0; }
-  20% { opacity: 1; }
-  65% { transform: translateY(0) scale(1.2); opacity: 1; }
-  100% { transform: translateY(0) scale(9); opacity: 0; }
-}
-
-/* FALLING HEART */
-.heart-stage {
-  width: 100%;
-  max-width: 550px;
-  position: relative;
-  min-height: 65vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-#heart {
-  font-size: clamp(130px,37vw,205px);
-  line-height: 1.2;
-  display: block;
-  filter: drop-shadow(0 8px 12px #46001988);
-}
-
-#heartScreen.heart-ready #heart {
-  animation: fallHeart 1.4s cubic-bezier(.2,.8,.3,1) both;
-}
-
-@keyframes fallHeart {
-  0% { transform: translateY(-100vh) scale(.35) rotate(-20deg); }
-  70% { transform: translateY(12px) scale(1.08) rotate(8deg); }
-  85% { transform: translateY(-6px) scale(.98) rotate(-4deg); }
-  100% { transform: translateY(0) scale(1) rotate(0); }
-}
-
-.heart-text {
-  font-size: clamp(20px,5vw,28px);
-  line-height: 1.6;
-  text-shadow: 0 3px 12px #230b2b;
-}
-
-#tapHeart {
-  margin-top: 18px;
-  padding: 18px 30px;
-  border: 2px solid white;
-  border-radius: 50px;
-  color: #9b123a;
-  background: #fff3f6;
-  font-weight: bold;
-}
-
-#arrow {
-  position: absolute;
-  top: 40%;
-  left: -60%;
-  z-index: 5;
-  font-size: clamp(80px,20vw,125px);
-  opacity: 0;
-  pointer-events: none;
-}
-
-#heartScreen.broken #arrow {
-  animation: arrowShoot .8s ease-in-out forwards;
-}
-
-@keyframes arrowShoot {
-  0% { left: -60%; opacity: 0; }
-  15% { opacity: 1; }
-  100% { left: 125%; opacity: 0; }
-}
-
-#heartScreen.broken #heart {
-  animation: breakHeart .8s .25s forwards;
-}
-
-@keyframes breakHeart {
-  0% { transform: scale(1); opacity: 1; }
-  35% { transform: scale(1.15) rotate(12deg); }
-  100% { transform: scale(.1) rotate(-30deg); opacity: 0; }
-}
-
-.fragments {
-  position: absolute;
+  z-index: 40;
+  position: fixed;
   inset: 0;
+  align-items: center;
+  justify-content: center;
+  background: #2c103f;
+  color: #ff75b5;
+  font-family: Arial, sans-serif;
+  font-weight: 900;
+  font-size: clamp(1.7rem, 8vw, 4rem);
+  white-space: nowrap;
   pointer-events: none;
 }
 
-.fragments span {
+#kissOverlay.show {
+  display: flex;
+  animation: kissGrow 2.25s ease-in forwards;
+}
+
+@keyframes kissGrow {
+  0% { transform: scale(.25); opacity: 0; }
+  18% { opacity: 1; }
+  65% { transform: scale(1.5); opacity: 1; }
+  100% { transform: scale(9); opacity: 0; }
+}
+
+/* HEART SCREEN */
+
+#heartScreen {
+  background:
+    radial-gradient(ellipse at center, #713b85 0%, #32133f 62%, #170e28 100%);
+}
+
+.heart-heading {
   position: absolute;
-  top: 40%;
-  font-size: 35px;
+  top: 12%;
+  left: 10px;
+  right: 10px;
+  font-size: clamp(1.3rem, 5vw, 2rem);
+  color: #ffe2ef;
+  text-shadow: 0 3px 14px #0008;
+}
+
+.heart-stage {
+  position: relative;
+  width: min(84vw, 360px);
+  height: min(80vw, 330px);
+  max-height: 43vh;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  margin-top: 20px;
+}
+
+.heart-art {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  overflow: visible;
+  filter: drop-shadow(0 12px 16px #ff1b5b60);
+}
+
+.heart-art .heart-base {
+  fill: url(#heartGradient);
+  stroke: #ffb1c8;
+  stroke-width: 1.5;
+}
+
+.heart-art .heart-shine {
+  fill: #fff;
+  opacity: .24;
+}
+
+.heart-art .crack {
+  fill: none;
+  stroke: #4b0926;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
   opacity: 0;
 }
 
-#heartScreen.broken .fragments span {
-  animation: fragments .9s .5s forwards;
+#heartScreen.hit .crack {
+  opacity: 1;
+  animation: crackFlash .35s ease-out both;
 }
 
-.fragments span:nth-child(1) { left: 20%; --x: -65px; }
-.fragments span:nth-child(2) { left: 70%; --x: 65px; }
-.fragments span:nth-child(3) { left: 35%; --x: -25px; }
-.fragments span:nth-child(4) { left: 60%; --x: 40px; }
-
-@keyframes fragments {
-  0% { opacity: 0; transform: translate(0,0) scale(.3); }
-  20% { opacity: 1; }
-  100% { opacity: 0; transform: translate(var(--x),-90px) scale(1.6); }
+@keyframes crackFlash {
+  0% { opacity: 0; stroke-width: 1; }
+  40% { opacity: 1; stroke-width: 5; }
+  100% { opacity: 1; stroke-width: 3.5; }
 }
 
-#afterBreak { display: none; }
-#heartScreen.broken #afterBreak { display: block; }
-#heartScreen.broken #heartInstruction,
-#heartScreen.broken #tapHeart { display: none; }
-
-/* ENVELOPE */
-.envelope {
-  display: block;
-  width: min(85vw,370px);
-  max-height: 310px;
-  object-fit: contain;
-  margin: 22px auto;
-  filter: drop-shadow(0 12px 15px #230b2b77);
-  animation: float 2s infinite ease-in-out;
+.heart-art .shard {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform .95s cubic-bezier(.15,.7,.2,1),
+              opacity .9s ease;
 }
 
-@keyframes float {
+#heartScreen.shattered .heart-art .shard.s1 {
+  transform: translate(-105px,-100px) rotate(-48deg);
+  opacity: 0;
+}
+#heartScreen.shattered .heart-art .shard.s2 {
+  transform: translate(0,-125px) rotate(28deg);
+  opacity: 0;
+}
+#heartScreen.shattered .heart-art .shard.s3 {
+  transform: translate(100px,-88px) rotate(60deg);
+  opacity: 0;
+}
+#heartScreen.shattered .heart-art .shard.s4 {
+  transform: translate(-120px,10px) rotate(-30deg);
+  opacity: 0;
+}
+#heartScreen.shattered .heart-art .shard.s5 {
+  transform: translate(115px,15px) rotate(45deg);
+  opacity: 0;
+}
+#heartScreen.shattered .heart-art .shard.s6 {
+  transform: translate(-70px,120px) rotate(70deg);
+  opacity: 0;
+}
+#heartScreen.shattered .heart-art .shard.s7 {
+  transform: translate(35px,125px) rotate(-40deg);
+  opacity: 0;
+}
+#heartScreen.shattered .heart-art .shard.s8 {
+  transform: translate(115px,105px) rotate(80deg);
+  opacity: 0;
+}
+
+.arrow {
+  z-index: 8;
+  position: absolute;
+  left: -100px;
+  top: 50%;
+  width: 100px;
+  height: 9px;
+  opacity: 0;
+  transform: translateY(-50%);
+  transform-origin: right center;
+  filter: drop-shadow(0 0 5px #fff);
+}
+
+.arrow::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 11px;
+  top: 3px;
+  height: 3px;
+  background: linear-gradient(90deg, #c4b8a0, #fff2cf);
+  border-radius: 3px;
+}
+
+.arrow::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -2px;
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 18px solid #f9e9c9;
+}
+
+.arrow .feather {
+  position: absolute;
+  left: 0;
+  top: -7px;
+  width: 27px;
+  height: 8px;
+  background: #ff6f9f;
+  clip-path: polygon(0 50%, 100% 0, 72% 50%, 100% 100%);
+}
+
+#heartScreen.shooting .arrow {
+  opacity: 1;
+  animation: arrowHit .48s cubic-bezier(.2,.75,.2,1) forwards;
+}
+
+@keyframes arrowHit {
+  from { left: -100px; }
+  to { left: calc(50% - 50px); }
+}
+
+#heartScreen .tap-heart {
+  position: absolute;
+  bottom: 11%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffe7f0;
+  animation: gentlePulse 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes gentlePulse {
+  from { transform: scale(1); opacity: .75; }
+  to { transform: scale(1.07); opacity: 1; }
+}
+
+#heartScreen.shattered .tap-heart {
+  display: none;
+}
+
+.impact-flash {
+  pointer-events: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  opacity: 0;
+  transform: translate(-50%,-50%);
+}
+
+#heartScreen.hit .impact-flash {
+  animation: impactFlash .45s ease-out;
+}
+
+@keyframes impactFlash {
+  0% { opacity: .95; transform: translate(-50%,-50%) scale(.2); }
+  100% { opacity: 0; transform: translate(-50%,-50%) scale(7); }
+}
+
+.heart-next {
+  display: none;
+  margin-top: 20px;
+}
+
+#heartScreen.shattered .heart-next {
+  display: inline-block;
+  animation: screenIn .6s ease both;
+}
+
+/* ENVELOPE: SEPARATE SCREEN */
+
+#envelopeScreen {
+  background:
+    radial-gradient(ellipse at center, #754b8d, #281333 80%);
+}
+
+.envelope-title {
+  font-size: clamp(1.8rem, 6vw, 2.6rem);
+  color: #ffe2ee;
+  margin-bottom: 20px;
+}
+
+.envelope-wrap {
+  position: relative;
+  width: min(78vw, 340px);
+  aspect-ratio: 1.25 / 1;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  filter: drop-shadow(0 15px 20px #10081899);
+  animation: envelopeFloat 2.8s ease-in-out infinite;
+}
+
+@keyframes envelopeFloat {
   0%,100% { transform: translateY(0) rotate(-1deg); }
   50% { transform: translateY(-10px) rotate(1deg); }
 }
 
-/* LETTER */
+.envelope-wrap img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.envelope-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6rem;
+  background: linear-gradient(135deg, #f8d6ae, #bd7e67);
+  clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
+  z-index: -1;
+}
+
+.envelope-caption {
+  margin-top: 22px;
+  font-size: 1.3rem;
+  color: #fff0f6;
+}
+
+/* LETTER: ITS OWN SCREEN */
+
 #letterScreen {
-  align-items: flex-start;
-  overflow-y: auto;
-  padding-top: 85px;
+  background:
+    linear-gradient(180deg, #30143fcc, #1b0e29e8),
+    url("https://raw.githubusercontent.com/yadavjosh62-svg/For-her-birthday-motu-/main/images/IMG_39507417-bebc-4da9-939e-b0ed63f3845d.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.letter-heading {
+  font-size: 1.5rem;
+  color: #ffe5f0;
+  margin: 0 0 12px;
 }
 
 .paper {
-  width: 100%;
-  max-width: 680px;
-  min-height: 650px;
-  margin: auto;
-  padding: clamp(38px,7vw,70px) clamp(24px,6vw,55px);
-  background-image: var(--paper);
-  background-position: center;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  color: #59352d;
+  position: relative;
+  width: min(91vw, 570px);
+  height: min(67vh, 620px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  color: #563a39;
   text-align: left;
-  font-size: clamp(15px,3.8vw,20px);
-  line-height: 1.75;
-  opacity: 0;
-  transform: translateY(100vh) rotate(4deg) scale(.8);
-  filter: drop-shadow(0 12px 18px #230b2b66);
+  padding: 28px 23px;
+  border-radius: 4px;
+  background-color: #fff4d8;
+  background-image:
+    linear-gradient(#fff6decc, #fff2dccc),
+    url("https://raw.githubusercontent.com/yadavjosh62-svg/For-her-birthday-motu-/main/images/IMG_3e9b8355-3a40-4946-9f1b-4981040099e9.jpg");
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 15px 40px #10081999;
+  transform: translateY(110vh) rotate(2deg);
+  opacity: .2;
 }
 
 #letterScreen.letter-open .paper {
-  animation: paperRise 1.7s ease-out forwards;
+  animation: paperRise 1.1s cubic-bezier(.2,.8,.2,1) forwards;
 }
 
 @keyframes paperRise {
-  0% { opacity: 0; transform: translateY(100vh) rotate(4deg) scale(.8); }
-  70% { opacity: 1; transform: translateY(-10px) rotate(-1deg) scale(1.02); }
-  100% { opacity: 1; transform: translateY(0) rotate(0) scale(1); }
+  0% { transform: translateY(110vh) rotate(2deg); opacity: .2; }
+  70% { transform: translateY(-8px) rotate(-1deg); opacity: 1; }
+  100% { transform: translateY(0) rotate(0); opacity: 1; }
 }
 
 .paper h2 {
-  font-size: clamp(23px,6vw,34px);
-  line-height: 1.4;
-  color: #852d47;
   text-align: center;
+  font-size: clamp(1.25rem, 4.5vw, 1.75rem);
+  line-height: 1.5;
+  color: #9e365b;
 }
 
-.paper p { font-size: inherit; line-height: inherit; }
+.paper p {
+  font-family: Georgia, serif;
+  font-size: clamp(1rem, 3.5vw, 1.1rem);
+  line-height: 1.65;
+}
 
-#letterNext { display: none; }
-#letterScreen.letter-open #letterNext { display: block; }
+.paper .signature {
+  text-align: center;
+  font-weight: bold;
+  color: #a13b68;
+}
+
+.letter-next {
+  margin-top: 12px;
+  flex-shrink: 0;
+}
 
 /* CHARACTER MESSAGE */
-.teddy {
-  font-size: clamp(95px,25vw,145px);
-  animation: bounce 1s infinite alternate;
+
+.character {
+  font-size: clamp(5rem, 22vw, 8rem);
+  margin: 5px;
+  filter: drop-shadow(0 8px 10px #16071f55);
+  animation: characterBounce 1s ease-in-out infinite alternate;
+}
+
+@keyframes characterBounce {
+  from { transform: translateY(0) rotate(-4deg); }
+  to { transform: translateY(-12px) rotate(4deg); }
 }
 
 .speech {
-  font-family: Arial,sans-serif;
-  font-size: clamp(19px,4.7vw,25px);
-  line-height: 1.9;
-  text-shadow: 0 3px 12px #220b29;
+  max-width: 95%;
+  font-size: clamp(1.3rem, 5vw, 2rem);
+  line-height: 1.6;
+  color: white;
+  text-shadow: 0 2px 10px #210d38;
 }
 
-#talkNext { display: none; }
-#talkScreen.finished #talkNext { display: block; }
+#finalScreen .final-message {
+  font-size: clamp(2rem, 7vw, 3.5rem);
+  line-height: 1.5;
+  text-shadow: 0 3px 20px #260c38;
+}
 
-@media (max-width: 420px) {
-  .content { padding: 20px 5px; }
-  .key { height: 58px; }
-  .paper { min-height: 700px; }
+/* SMALL SCREEN */
+
+@media (max-height: 650px) {
+  .heart-heading { top: 7%; }
+  .heart-stage { max-height: 38vh; }
+  #heartScreen .tap-heart { bottom: 6%; }
+  .paper { height: 59vh; padding: 20px 18px; }
+  .paper p { line-height: 1.5; }
 }
 </style>
 </head>
 
 <body>
 
-<iframe id="song" title="Background music"
-  allow="autoplay; encrypted-media"
-  style="position:fixed;width:1px;height:1px;left:-10px;bottom:-10px;border:0;opacity:.01">
+<button class="music-btn" id="musicButton" aria-label="Toggle music">♫</button>
+
+<audio id="music" loop>
+  <source src="" type="audio/mpeg">
+</audio>
+
+<!-- YouTube music player: press play on the music button to open the video -->
+<iframe id="youtubePlayer"
+  title="Birthday music"
+  width="0" height="0"
+  style="position:fixed;left:-9999px;top:-9999px;border:0"
+  allow="autoplay; encrypted-media">
 </iframe>
 
-<button id="musicToggle" type="button" aria-label="Toggle music">🔊</button>
+<div id="kissOverlay">umhaaaaaa 💋😚🎀</div>
 
-<div id="kiss"><span>umhaaaaaa 💋😚🎀</span></div>
-
-<!-- HOME -->
-<section id="home" class="screen active">
-  <div class="content">
-    <div class="eyebrow">A little something for you ♡</div>
-    <h1>I have made something for you...</h1>
-    <p>A little surprise is waiting just for you. ✨</p>
-    <button class="btn" onclick="showScreen('passcode')">Open Surprise ♡</button>
-    <button class="btn secondary" onclick="showScreen('dare')">Not Open 🙈</button>
-  </div>
+<!-- SCREEN 1: HOME -->
+<section class="screen active" id="home">
+  <h1>Happy Birthday<br>Sangam 🎀✨ Motu ✨💕</h1>
+  <p>Someone made a little surprise just for you 💗</p>
+  <button class="main-btn" onclick="openSurprise()">Open Surprise ♡</button>
+  <button class="main-btn secondary-btn" onclick="showScreen('dare')">Not Open 🙈</button>
 </section>
 
-<!-- DARE -->
-<section id="dare" class="screen">
-  <div class="content">
-    <div class="eyebrow">Excuse me?! 😤</div>
-    <h1>How dare you!!</h1>
-    <div class="dudu">🐻</div>
-    <p>You really thought you could leave without opening my surprise? ♡</p>
-    <button class="btn" onclick="showScreen('home')">Try Again ↻</button>
-  </div>
+<!-- SCREEN 2: NOT OPEN -->
+<section class="screen bg-photo" id="dare">
+  <h1>How dare you!! 😤💗</h1>
+  <div class="character">🥺🧸</div>
+  <p>You have to open your surprise! 🙈</p>
+  <button class="main-btn" onclick="showScreen('home')">Okay, I'll open it 💕</button>
 </section>
 
-<!-- LOCK -->
-<section id="passcode" class="screen">
-  <div class="content">
-    <div class="lock">🗝️</div>
-    <h1>Enter the passkey</h1>
-    <p>Only the right code can unlock this surprise. ♡</p>
+<!-- SCREEN 3: PASSCODE -->
+<section class="screen bg-photo" id="passcode">
+  <h1>One little secret 🔐</h1>
+  <p>Enter our special code 💗</p>
+  <div id="pinDisplay">••••</div>
 
-    <div class="dots">
-      <span class="dot"></span><span class="dot"></span>
-      <span class="dot"></span><span class="dot"></span>
-    </div>
-
-    <div class="keypad">
-      <button class="key" data-digit="1">1</button>
-      <button class="key" data-digit="2">2</button>
-      <button class="key" data-digit="3">3</button>
-      <button class="key" data-digit="4">4</button>
-      <button class="key" data-digit="5">5</button>
-      <button class="key" data-digit="6">6</button>
-      <button class="key" data-digit="7">7</button>
-      <button class="key" data-digit="8">8</button>
-      <button class="key" data-digit="9">9</button>
-      <button class="key" id="deleteDigit">⌫</button>
-      <button class="key" data-digit="0">0</button>
-      <button class="key" id="enterPin">↵</button>
-    </div>
-
-    <p id="pinMessage" aria-live="polite"></p>
-    <button class="btn secondary" onclick="showScreen('home')">← Go Back</button>
+  <div class="keypad">
+    <button onclick="addDigit('1')">1</button>
+    <button onclick="addDigit('2')">2</button>
+    <button onclick="addDigit('3')">3</button>
+    <button onclick="addDigit('4')">4</button>
+    <button onclick="addDigit('5')">5</button>
+    <button onclick="addDigit('6')">6</button>
+    <button onclick="addDigit('7')">7</button>
+    <button onclick="addDigit('8')">8</button>
+    <button onclick="addDigit('9')">9</button>
+    <button onclick="clearPin()">⌫</button>
+    <button onclick="addDigit('0')">0</button>
+    <button onclick="submitPin()">✓</button>
   </div>
+  <p id="pinMessage"></p>
 </section>
 
-<!-- HEART -->
-<section id="heartScreen" class="screen">
-  <div class="heart-stage">
-    <div id="heart">❤️</div>
-    <div id="arrow">➳</div>
+<!-- SCREEN 4: HEART + ARROW -->
+<section class="screen" id="heartScreen">
+  <div class="heart-heading">A little piece of my heart… ❤️</div>
 
-    <div class="fragments">
-      <span>💔</span><span>❤️‍🩹</span><span>✨</span><span>💕</span>
+  <div class="heart-stage" id="heartStage">
+    <svg class="heart-art" viewBox="0 0 200 180" aria-label="Red heart">
+      <defs>
+        <linearGradient id="heartGradient" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#ff7899"/>
+          <stop offset="45%" stop-color="#f51e50"/>
+          <stop offset="100%" stop-color="#a90036"/>
+        </linearGradient>
+        <clipPath id="heartClip">
+          <path d="M100 165 C85 149 12 100 12 54 C12 9 65 -1 100 37 C135 -1 188 9 188 54 C188 100 115 149 100 165 Z"/>
+        </clipPath>
+      </defs>
+
+      <!-- Each shard is clipped from the same heart shape -->
+      <g clip-path="url(#heartClip)">
+        <path class="heart-base shard s1"
+          d="M100 165 C85 149 12 100 12 54 C12 9 65 -1 100 37 C135 -1 188 9 188 54 C188 100 115 149 100 165 Z"/>
+        <path class="heart-base shard s2"
+          d="M100 165 C85 149 12 100 12 54 C12 9 65 -1 100 37 C135 -1 188 9 188 54 C188 100 115 149 100 165 Z"/>
+        <path class="heart-base shard s3"
+          d="M100 165 C85 149 12 100 12 54 C12 9 65 -1 100 37 C135 -1 188 9 188 54 C188 100 115 149 100 165 Z"/>
+        <path class="heart-base shard s4"
+          d="M100 165 C85 149 12 100 12 54 C12 9 65 -1 100 37 C135 -1 188 9 188 54 C188 100 115 149 100 165 Z"/>
+        <path class="heart-base shard s5"
+          d="M100 165 C85 149 12 100 12 54 C12 9 65 -1 100 37 C135 -1 188 9 188 54 C188 100 115 149 100 165 Z"/>
+        <path class="heart-base shard s6"
+          d="M100 165 C85 149 12 100 12 54 C12 9 65 -1 100 37 C135 -1 188 9 188 54 C188 100 115 149 100 165 Z"/>
+        <path class="heart-base shard s7"
+          d="M100 165 C85 149 12 100 12 54 C12 9 65 -1 100 37 C135 -1 188 9 188 54 C188 100 115 149 100 165 Z"/>
+        <path class="heart-base shard s8"
+          d="M100 165 C85 149 12 100 12 54 C12 9 65 -1 100 37 C135 -1 188 9 188 54 C188 100 115 149 100 165 Z"/>
+      </g>
+
+      <path class="heart-shine" d="M43 35 C55 20 76 23 85 39 C68 34 57 45 54 59 C47 53 43 44 43 35Z"/>
+
+      <!-- Crack lines appear at the exact center of the heart -->
+      <g class="crack">
+        <path d="M100 78 L91 91 L105 99 L94 112 L101 125"/>
+        <path d="M93 91 L76 86 L68 73"/>
+        <path d="M105 99 L124 91 L134 78"/>
+        <path d="M94 112 L78 119 L69 132"/>
+        <path d="M101 125 L119 132 L129 143"/>
+      </g>
+    </svg>
+
+    <!-- Arrow tip ends at the heart's center -->
+    <div class="arrow" id="arrow">
+      <span class="feather"></span>
     </div>
-
-    <div id="heartInstruction" class="heart-text">
-      A big red heart, just for you ❤️<br>
-      Tap to break my heart 💘
-    </div>
-
-    <button id="tapHeart">Tap here ❤️</button>
-
-    <div id="afterBreak">
-      <h1>Oops! You broke my heart... 💔</h1>
-      <p>But I have a little letter for my princess! 💌</p>
-
-      <img
-        class="envelope"
-        src="https://raw.githubusercontent.com/yadavjosh62-svg/For-her-birthday-motu-/main/images/il_fullxfull.8189381375_1wod.jpg"
-        alt="Vintage envelope"
-      >
-
-      <button id="openLetter" class="btn">Open your letter 💌</button>
-    </div>
+    <div class="impact-flash"></div>
   </div>
+
+  <div class="tap-heart" id="tapHeart">Tap here ❤️</div>
+  <button class="main-btn heart-next" id="heartNext" onclick="showScreen('envelopeScreen')">
+    Open your letter 💌
+  </button>
 </section>
 
-<!-- LETTER -->
-<section id="letterScreen" class="screen">
-  <div class="content">
-    <article class="paper" id="paper">
-      <h2>🎀✨ Happy Birthday, My Princess! 👑💗 ✨🎂</h2>
+<!-- SCREEN 5: ENVELOPE ONLY -->
+<section class="screen" id="envelopeScreen">
+  <h1 class="envelope-title">A letter for you 💌</h1>
 
-      <p>
-        Happy Birthday to the most beautiful princess! 🥹❤️ May your life
-        always be filled with endless happiness, love, and magical moments.
-        May your beautiful smile never fade, and may all your dreams come true.
-        🫶🏻💖
-      </p>
-
-      <p>
-        You deserve all the love, care, and happiness in this world because
-        you are truly someone special. 👑🌸 May every new day bring you more
-        reasons to smile, and may your heart always be filled with peace and
-        love. 🦋💕
-      </p>
-
-      <p>
-        I pray that you always shine like a star, bloom like a flower, and
-        live like the queen you are. 💫🎀 Never forget how precious and
-        special you are. ❤️✨
-      </p>
-
-      <p>
-        <strong>Happy Birthday once again, my princess!</strong> 🎂👑💋
-        May your special day be as beautiful as your heart, as sweet as your
-        smile, and as magical as your dreams. 🩷🫂
-      </p>
-
-      <p>
-        <strong>Keep smiling, keep shining, and always stay happy, my princess!</strong>
-        🎀💗✨
-      </p>
-    </article>
-
-    <button id="letterNext" class="btn">Next ➜ 💕</button>
+  <div class="envelope-wrap" onclick="openLetter()" role="button" tabindex="0"
+       onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLetter();}">
+    <div class="envelope-fallback">💌</div>
+    <img
+      src="https://raw.githubusercontent.com/yadavjosh62-svg/For-her-birthday-motu-/main/images/il_fullxfull.8189381375_1wod.jpg"
+      alt="Vintage envelope"
+      onerror="this.style.display='none'">
   </div>
+
+  <p class="envelope-caption">Tap the envelope to open it ✨</p>
+  <button class="main-btn" onclick="openLetter()">Open your letter 💌</button>
 </section>
 
-<!-- CHARACTER MESSAGE -->
-<section id="talkScreen" class="screen">
-  <div class="content">
-    <div class="eyebrow">Made with all my love ♡</div>
-    <div class="teddy">🧸🎀</div>
+<!-- SCREEN 6: LETTER ON PAPER -->
+<section class="screen" id="letterScreen">
+  <h2 class="letter-heading">A little letter from my heart 💗</h2>
 
-    <div class="speech">
-      <div>Happy birthday Sangam ✨💕</div>
-      <div>May God bless you 🪷🫂</div>
-      <div><strong>I lub uhhhhhhhhh 😚💋🎀</strong></div>
-      <div>hmr baccha 💗</div>
-    </div>
+  <article class="paper" id="paper">
+    <h2>🎀✨ Happy Birthday, My Princess! 👑💗 ✨🎂</h2>
 
-    <button id="talkNext" class="btn">Next surprise ➜ 💕</button>
-  </div>
+    <p>
+      Happy Birthday to the most beautiful princess! 🥹❤️ May your life
+      always be filled with endless happiness, love, and magical moments.
+      May your beautiful smile never fade, and may all your dreams come true.
+      🫶🏻💖
+    </p>
+
+    <p>
+      You deserve all the love, care, and happiness in this world because
+      you are truly someone special. 👑🌸 May every new day bring you more
+      reasons to smile, and may your heart always be filled with peace and
+      love. 🦋💕
+    </p>
+
+    <p>
+      I pray that you always shine like a star, bloom like a flower, and live
+      like the queen you are. 💫🎀 Never forget how precious and special you
+      are. ❤️✨
+    </p>
+
+    <p>
+      <strong>Happy Birthday once again, my princess!</strong> 🎂👑💋
+      May your special day be as beautiful as your heart, as sweet as your
+      smile, and as magical as your dreams. 🩷🫂
+    </p>
+
+    <p class="signature">
+      Keep smiling, keep shining, and always stay happy, my princess! 🎀💗✨
+    </p>
+  </article>
+
+  <button class="main-btn letter-next" onclick="showScreen('talkScreen')">
+    Next 💕
+  </button>
 </section>
 
-<!-- NEXT SCREEN: SAME BACKGROUND -->
-<section id="nextScreen" class="screen">
-  <div class="content">
-    <div class="eyebrow">For my special one ♡</div>
-    <h1>There's more, Sangam! 💕</h1>
-    <p>You are my favourite little surprise. 🎀✨</p>
-    <p>Keep smiling, my princess! 👑💗</p>
-    <button class="btn" onclick="showScreen('heartScreen')">See again ♡</button>
-  </div>
+<!-- SCREEN 7: CHARACTER MESSAGE -->
+<section class="screen bg-photo" id="talkScreen">
+  <div class="character">🧸💗</div>
+  <h1>For my Motu 🎀</h1>
+  <p class="speech" id="speechText">
+    happy birthday sangam ✨💕<br>
+    May god bless you 🪷🫂<br>
+    I lub uhhhhhhhhh 😚💋🎀 hmr baccha
+  </p>
+  <button class="main-btn" onclick="showScreen('finalScreen')">Next ✨</button>
+</section>
+
+<!-- SCREEN 8: FINAL SURPRISE -->
+<section class="screen bg-photo" id="finalScreen">
+  <div class="character">🎀👑🧸</div>
+  <h1 class="final-message">There's more, Sangam! 💗✨</h1>
+  <p>My princess, this little surprise is all for you 🫶🏻</p>
+  <button class="main-btn" onclick="replaySurprise()">See surprise again ♡</button>
 </section>
 
 <script>
-(function () {
-  "use strict";
+const screens = document.querySelectorAll(".screen");
+const pinDisplay = document.getElementById("pinDisplay");
+const pinMessage = document.getElementById("pinMessage");
+const kissOverlay = document.getElementById("kissOverlay");
+const heartScreen = document.getElementById("heartScreen");
+const musicButton = document.getElementById("musicButton");
+const youtubePlayer = document.getElementById("youtubePlayer");
 
-  const PASSKEY = "0806";
-  let pin = "";
-  let musicOn = true;
-  let musicStarted = false;
-  let heartSequenceStarted = false;
-  let letterStarted = false;
-  let characterStarted = false;
-  let speechTimer = null;
+let pin = "";
+let heartSequenceStarted = false;
+let heartBroken = false;
+let envelopeOpened = false;
+let musicOn = false;
+let kissTimer = null;
+let heartTimers = [];
+let letterTimer = null;
 
-  const $ = id => document.getElementById(id);
-  const song = $("song");
-  const musicToggle = $("musicToggle");
+function showScreen(id) {
+  screens.forEach(screen => screen.classList.remove("active"));
+  const target = document.getElementById(id);
+  if (target) target.classList.add("active");
 
-  function startMusic() {
-    if (!musicOn || musicStarted) return;
-
-    song.src =
-      "https://www.youtube.com/embed/JUyostfvwMw?autoplay=1&loop=1&playlist=JUyostfvwMw&controls=0&playsinline=1";
-
-    musicStarted = true;
+  if (id === "heartScreen" && !heartSequenceStarted) {
+    startHeartSequence();
   }
+}
 
-  function stopMusic() {
-    song.src = "";
-    musicStarted = false;
-  }
+function openSurprise() {
+  pin = "";
+  updatePin();
+  pinMessage.textContent = "";
+  showScreen("passcode");
+}
 
-  musicToggle.addEventListener("click", function () {
-    musicOn = !musicOn;
-    musicToggle.textContent = musicOn ? "🔊" : "🔇";
-
-    if (musicOn) {
-      startMusic();
-    } else {
-      stopMusic();
-    }
-  });
-
-  document.addEventListener("pointerdown", function (event) {
-    if (event.target.closest("#musicToggle")) return;
-    startMusic();
-  }, { once: true });
-
-  window.showScreen = function (id) {
-    const target = $(id);
-    if (!target) return;
-
-    document.querySelectorAll(".screen").forEach(screen => {
-      screen.classList.remove("active");
-    });
-
-    target.classList.add("active");
-    window.scrollTo(0, 0);
-
-    if (id === "passcode") resetPin();
-
-    if (id === "heartScreen" && !heartSequenceStarted) {
-      heartSequenceStarted = true;
-      startHeartSequence();
-    }
-
-    if (id === "letterScreen" && !letterStarted) {
-      letterStarted = true;
-      target.classList.add("letter-open");
-    }
-
-    if (id === "talkScreen" && !characterStarted) {
-      characterStarted = true;
-      startCharacterMessage();
-    }
-  };
-
-  function resetPin() {
-    pin = "";
-    updateDots();
-    $("pinMessage").textContent = "";
-    document.querySelectorAll("[data-digit],#deleteDigit,#enterPin")
-      .forEach(button => button.disabled = false);
-  }
-
-  function updateDots() {
-    document.querySelectorAll(".dot").forEach((dot, index) => {
-      dot.classList.toggle("filled", index < pin.length);
-    });
-  }
-
-  function submitPin() {
-    if (pin.length !== 4) {
-      $("pinMessage").textContent = "Enter all 4 digits 🔑";
-      return;
-    }
-
-    if (pin === PASSKEY) {
-      showScreen("heartScreen");
-    } else {
-      $("pinMessage").textContent = "Wrong password 🔑 Try again!";
-      pin = "";
-      updateDots();
-    }
-  }
-
-  document.querySelectorAll("[data-digit]").forEach(button => {
-    button.addEventListener("click", function () {
-      if (pin.length >= 4) return;
-
-      pin += button.dataset.digit;
-      updateDots();
-
-      if (pin.length === 4) {
-        setTimeout(submitPin, 180);
-      }
-    });
-  });
-
-  $("deleteDigit").addEventListener("click", function () {
-    pin = pin.slice(0, -1);
-    updateDots();
-    $("pinMessage").textContent = "";
-  });
-
-  $("enterPin").addEventListener("click", submitPin);
-
-  function startHeartSequence() {
-    $("kiss").classList.add("show");
-
-    setTimeout(function () {
-      $("kiss").classList.remove("show");
-      $("heartScreen").classList.add("heart-ready");
-    }, 2250);
-  }
-
-  $("tapHeart").addEventListener("click", function () {
-    const screen = $("heartScreen");
-    if (screen.classList.contains("broken")) return;
-
-    screen.classList.add("broken");
-  });
-
-  function openLetter() {
-    showScreen("letterScreen");
-  }
-
-  $("openLetter").addEventListener("click", openLetter);
-
-  $("letterNext").addEventListener("click", function () {
-    showScreen("talkScreen");
-  });
-
-  function startCharacterMessage() {
-    const screen = $("talkScreen");
-    const next = $("talkNext");
-
-    next.style.display = "none";
-
-    const revealNext = function () {
-      screen.classList.add("finished");
-      next.style.display = "block";
-    };
-
-    const spokenMessage =
-      "Happy birthday Sangam. May God bless you. I love you, my baccha.";
-
-    if ("speechSynthesis" in window &&
-        "SpeechSynthesisUtterance" in window) {
-      const utterance = new SpeechSynthesisUtterance(spokenMessage);
-      utterance.rate = 0.9;
-      utterance.pitch = 1.15;
-
-      utterance.onend = revealNext;
-      utterance.onerror = revealNext;
-
-      window.speechSynthesis.cancel();
-      window.speechSynthesis.speak(utterance);
-
-      speechTimer = setTimeout(function () {
-        window.speechSynthesis.cancel();
-        revealNext();
-      }, 12000);
-    } else {
-      speechTimer = setTimeout(revealNext, 6000);
-    }
-  }
-
-  $("talkNext").addEventListener("click", function () {
-    if ("speechSynthesis" in window) {
-      window.speechSynthesis.cancel();
-    }
-
-    if (speechTimer) clearTimeout(speechTimer);
-    showScreen("nextScreen");
-  });
-
-})();
-</script>
-
-</body>
-</html>
+funct
