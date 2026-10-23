@@ -15,7 +15,6 @@
 }
 
 * { box-sizing: border-box; }
-
 html { scroll-behavior: smooth; }
 
 body {
@@ -117,7 +116,6 @@ p {
   font-size: 25px;
 }
 
-/* PASSCODE */
 .lock { font-size: 62px; }
 
 .dots {
@@ -363,7 +361,7 @@ p {
   text-shadow: 0 3px 12px #220b29;
 }
 
-/* NEW PHOTO MEMORY SCREEN */
+/* PHOTO MEMORY SCREEN */
 #memoryScreen {
   display: none;
   min-height: 100vh;
@@ -423,9 +421,7 @@ p {
   align-items: flex-end;
 }
 
-.memory-row.right img {
-  width: clamp(145px,43vw,280px);
-}
+.memory-row.right img { width: clamp(145px,43vw,280px); }
 
 .memory-row.right .memory-text {
   flex: initial;
@@ -603,7 +599,7 @@ p {
   </div>
 </section>
 
-<!-- EXISTING NEXT SCREEN -->
+<!-- NEXT SCREEN -->
 <section id="nextScreen" class="screen">
   <div class="content">
     <div class="eyebrow">For my special one ♡</div>
@@ -615,82 +611,56 @@ p {
   </div>
 </section>
 
-<!-- NEW MEMORY / PHOTO INTERFACE -->
+<!-- MEMORY / PHOTO SCREEN -->
 <section id="memoryScreen" class="screen">
   <div class="memory-wrap">
 
-    <!-- PHOTO 1: TOP LEFT -->
     <div class="memory-row left">
-      <img
-        src="https://raw.githubusercontent.com/yadavjosh62-svg/For-her-birthday-motu-/main/images/Picsart_26-10-23_09-03-02-073.jpg"
-        alt="Birthday memory one">
-      <div class="memory-text">
-        Happy Birthday, Sangam 🎀❤️‍🩹 May your beautiful smile always shine and your heart always stay happy. 👑💗✨
-      </div>
+      <img src="https://raw.githubusercontent.com/yadavjosh62-svg/For-her-birthday-motu-/main/images/Picsart_26-10-23_09-03-02-073.jpg" alt="Birthday memory one">
+      <div class="memory-text">Happy Birthday, Sangam 🎀❤️‍🩹 May your beautiful smile always shine and your heart always stay happy. 👑💗✨</div>
     </div>
 
-    <!-- PHOTO 2: RIGHT SIDE -->
     <div class="memory-row right">
-      <img
-        src="https://raw.githubusercontent.com/yadavjosh62-svg/For-her-birthday-motu-/main/images/Picsart_26-10-23_09-04-37-516.png"
-        alt="Birthday memory two">
-      <div class="memory-text">
-        👑💕 Not every princess wears a crown; some just have the most beautiful smile. 🥹✨
-      </div>
+      <img src="https://raw.githubusercontent.com/yadavjosh62-svg/For-her-birthday-motu-/main/images/Picsart_26-10-23_09-04-37-516.png" alt="Birthday memory two">
+      <div class="memory-text">👑💕 Not every princess wears a crown; some just have the most beautiful smile. 🥹✨</div>
     </div>
 
-    <!-- PHOTO 3: CENTER WITH MESSAGE BESIDE IT -->
     <div class="memory-row center">
-      <img
-        src="https://raw.githubusercontent.com/yadavjosh62-svg/For-her-birthday-motu-/main/images/Picsart_26-10-23_09-09-49-013.jpg"
-        alt="Birthday memory three">
-      <div class="memory-text">
-        Just a collection of moments from my favorite person's favorite week of the year. 🎁🦁💘
-      </div>
+      <img src="https://raw.githubusercontent.com/yadavjosh62-svg/For-her-birthday-motu-/main/images/Picsart_26-10-23_09-09-49-013.jpg" alt="Birthday memory three">
+      <div class="memory-text">Just a collection of moments from my favorite person's favorite week of the year. 🎁🦁💘</div>
     </div>
 
-    <!-- PHOTO 4: IMAGE AND MESSAGE SIDE BY SIDE -->
     <div class="memory-row left">
-      <img
-        src="https://raw.githubusercontent.com/yadavjosh62-svg/For-her-birthday-motu-/main/images/Picsart_26-10-23_09-16-11-526.png"
-        alt="Birthday memory four">
-      <div class="memory-text">
-        💗 Sangam, if I could choose again, I would still choose you in every lifetime. ♾️❤️
-      </div>
+      <img src="https://raw.githubusercontent.com/yadavjosh62-svg/For-her-birthday-motu-/main/images/Picsart_26-10-23_09-16-11-526.png" alt="Birthday memory four">
+      <div class="memory-text">💗 Sangam, if I could choose again, I would still choose you in every lifetime. ♾️❤️</div>
     </div>
 
-    <!-- PHOTO 5 -->
     <div class="memory-row left">
-      <img
-        src="https://raw.githubusercontent.com/yadavjosh62-svg/For-her-birthday-motu-/main/images/Picsart_26-10-23_09-17-37-206.png"
-        alt="Birthday memory five">
-      <div class="memory-text">
-        Ki yar cheating kari xe tu 🥹🤌 aatek Sundar nai hobak chahi tora 😝🤭
-      </div>
+      <img src="https://raw.githubusercontent.com/yadavjosh62-svg/For-her-birthday-motu-/main/images/Picsart_26-10-23_09-17-37-206.png" alt="Birthday memory five">
+      <div class="memory-text">Ki yar cheating kari xe tu 🥹 🤌 aatek Sundar nai hobak chahi tora 😝🤭</div>
     </div>
 
-    <!-- SPACED-OUT ENDING -->
+    <div class="memory-next">
+      <button class="btn" onclick="showScreen('futureScreen')">Next ➜ 💕</button>
+    </div>
+
     <div class="memory-ending">
       <div>Lub uhhhhhhhhh 🥺🤍</div>
       <div>bahut Sara ✨🪷</div>
       <div class="miss-you">Miss you lot 🙁🫀</div>
     </div>
 
-    <!-- NEXT BUTTON: READY FOR YOUR NEXT INTERFACE -->
-    <div class="memory-next">
-      <button class="btn" onclick="showScreen('futureScreen')">Next ➜ 💕</button>
-    </div>
-
   </div>
 </section>
 
-<!-- TEMPORARY NEXT INTERFACE; WE CAN CUSTOMIZE IT LATER -->
+<!-- FUTURE SCREEN -->
 <section id="futureScreen" class="screen">
   <div class="content">
     <div class="eyebrow">Just for you, Sangam 🎀</div>
     <h1>More surprises are waiting! 💗</h1>
     <p>To be continued, my princess... 🥹🫶🏻✨</p>
     <button class="btn" onclick="showScreen('memoryScreen')">Back to our memories ↶</button>
+    <button class="btn secondary" onclick="showScreen('nextScreen')">Back ↶</button>
   </div>
 </section>
 
@@ -703,22 +673,20 @@ p {
   let musicOn = true;
   let musicStarted = false;
   let heartSequenceStarted = false;
-  let letterStarted = false;
-  let characterStarted = false;
-  let speechTimer = null;
 
   const $ = id => document.getElementById(id);
   const song = $("song");
   const musicToggle = $("musicToggle");
 
+  // MUSIC
   function startMusic() {
-    if (!musicOn || musicStarted) return;
+    if (!musicOn || musicStarted || !song) return;
     song.src = "https://www.youtube.com/embed/JUyostfvwMw?autoplay=1&loop=1&playlist=JUyostfvwMw&controls=0&playsinline=1";
     musicStarted = true;
   }
 
   function stopMusic() {
-    song.src = "";
+    if (song) song.src = "";
     musicStarted = false;
   }
 
@@ -730,15 +698,18 @@ p {
   });
 
   document.addEventListener("pointerdown", function (event) {
-    if (event.target.closest("#musicToggle")) return;
-    startMusic();
+    if (!event.target.closest("#musicToggle")) startMusic();
   }, { once: true });
 
+  // NAVIGATION: all screens
   window.showScreen = function (id) {
     const target = $(id);
-    if (!target) return;
+    if (!target) {
+      console.error("Screen not found:", id);
+      return;
+    }
 
-    document.querySelectorAll(".screen").forEach(screen => {
+    document.querySelectorAll(".screen").forEach(function (screen) {
       screen.classList.remove("active");
     });
 
@@ -747,22 +718,39 @@ p {
 
     if (id === "passcode") resetPin();
 
-    if (id === "heartScreen" && !heartSequenceStarted) {
-      heartSequenceStarted = true;
-      startHeartSequence();
+    if (id === "heartScreen") {
+      if (!heartSequenceStarted) {
+        heartSequenceStarted = true;
+        startHeartSequence();
+      } else {
+        $("kiss").classList.remove("show");
+      }
     }
 
-    if (id === "letterScreen" && !letterStarted) {
-      letterStarted = true;
-      target.classList.add("letter-open");
+    if (id === "letterScreen") {
+      $("letterScreen").classList.remove("letter-open");
+      void $("letterScreen").offsetWidth;
+      $("letterScreen").classList.add("letter-open");
     }
 
-    if (id === "talkScreen" && !characterStarted) {
-      characterStarted = true;
-      startCharacterMessage();
+    if (id === "talkScreen") {
+      $("talkNext").style.display = "block";
     }
   };
+
+  // PASSCODE
+  function updateDots() {
+    document.querySelectorAll("#passcode .dot").forEach(function (dot, index) {
+      dot.classList.toggle("filled", index < pin.length);
+    });
+  }
 
   function resetPin() {
     pin = "";
     updateDots();
+    $("pinMessage").textContent = "";
+  }
+
+  function checkPin() {
+    if (pin.length !== 4) {
+    
