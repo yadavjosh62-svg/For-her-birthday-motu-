@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,20 +15,17 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-
 body {
   margin: 0;
+  background: #4b2855;
   color: white;
   font-family: Georgia, "Times New Roman", serif;
-  background: #4b2855;
 }
-
 button {
   cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
   font-size: 18px;
+  -webkit-tap-highlight-color: transparent;
 }
-
 .screen {
   display: none;
   min-height: 100vh;
@@ -39,22 +35,18 @@ button {
   justify-content: center;
   text-align: center;
   position: relative;
-  background-image: linear-gradient(#28102b66,#28102b88),var(--background);
+  background-image: linear-gradient(#28102b66,#28102b99),var(--background);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-
 .screen.active { display: flex; }
-
 #home {
-  background-image: linear-gradient(#32103a55,#32103a77),var(--home);
+  background-image: linear-gradient(#32103a55,#32103a99),var(--home);
 }
-
 #dare, #passcode {
   background-image: linear-gradient(135deg,#492755,#a866a1,#59345f);
 }
-
 .content {
   width: 100%;
   max-width: 600px;
@@ -63,25 +55,21 @@ button {
   position: relative;
   z-index: 2;
 }
-
 h1 {
   font-size: clamp(35px,9vw,58px);
   line-height: 1.2;
   font-weight: normal;
   text-shadow: 0 3px 15px #30112d99;
 }
-
 p {
   font-size: clamp(17px,4.5vw,22px);
   line-height: 1.8;
 }
-
 .eyebrow {
   font: 14px/1.7 Arial,sans-serif;
   letter-spacing: 3px;
   text-transform: uppercase;
 }
-
 .btn {
   display: block;
   width: min(100%,330px);
@@ -94,14 +82,11 @@ p {
   font-weight: bold;
   box-shadow: 0 5px 20px #230b2b44;
 }
-
 .btn:active { transform: scale(.96); }
-
 .btn.secondary {
   color: white;
   background: #ffffff20;
 }
-
 #musicToggle {
   position: fixed;
   z-index: 100;
@@ -115,25 +100,20 @@ p {
   color: white;
   font-size: 25px;
 }
-
 .lock { font-size: 62px; }
-
 .dots {
   display: flex;
   justify-content: center;
   gap: 18px;
   margin: 25px;
 }
-
 .dot {
   width: 15px;
   height: 15px;
   border: 2px solid white;
   border-radius: 50%;
 }
-
 .dot.filled { background: white; }
-
 .keypad {
   display: grid;
   grid-template-columns: repeat(3,1fr);
@@ -141,7 +121,6 @@ p {
   max-width: 330px;
   margin: auto;
 }
-
 .key {
   height: 60px;
   border: 1px solid #ffffffaa;
@@ -150,19 +129,16 @@ p {
   background: #ffffff20;
   font-size: 25px;
 }
-
 #pinMessage { min-height: 30px; }
-
 .dudu, .teddy {
   font-size: 110px;
   animation: bounce 1s infinite alternate;
 }
-
 @keyframes bounce {
   to { transform: translateY(-12px) rotate(4deg); }
 }
 
-/* KISS */
+/* Kiss */
 #kiss {
   position: fixed;
   z-index: 90;
@@ -173,14 +149,11 @@ p {
   overflow: hidden;
   background: #c99ae9;
 }
-
 #kiss.show { display: flex; }
-
 #kiss span {
   font: bold clamp(30px,8vw,55px) Arial,sans-serif;
   animation: kissZoom 2.2s forwards;
 }
-
 @keyframes kissZoom {
   0% { transform: translateY(-100vh) scale(.2); opacity: 0; }
   20% { opacity: 1; }
@@ -188,7 +161,7 @@ p {
   100% { transform: translateY(0) scale(9); opacity: 0; }
 }
 
-/* HEART */
+/* Heart */
 .heart-stage {
   width: 100%;
   max-width: 550px;
@@ -199,28 +172,23 @@ p {
   align-items: center;
   justify-content: center;
 }
-
 #heart {
   font-size: clamp(130px,37vw,205px);
   line-height: 1.2;
   filter: drop-shadow(0 8px 12px #46001988);
 }
-
 #heartScreen.heart-ready #heart {
   animation: fallHeart 1.4s both;
 }
-
 @keyframes fallHeart {
   0% { transform: translateY(-100vh) scale(.35) rotate(-20deg); }
   70% { transform: translateY(12px) scale(1.08) rotate(8deg); }
   100% { transform: translateY(0) scale(1) rotate(0); }
 }
-
 .heart-text {
   font-size: clamp(20px,5vw,28px);
   line-height: 1.6;
 }
-
 #tapHeart {
   margin-top: 18px;
   padding: 18px 30px;
@@ -230,7 +198,6 @@ p {
   background: #fff3f6;
   font-weight: bold;
 }
-
 #arrow {
   position: absolute;
   top: 40%;
@@ -240,59 +207,46 @@ p {
   opacity: 0;
   pointer-events: none;
 }
-
-#heartScreen.broken #arrow {
-  animation: arrowShoot .8s forwards;
-}
-
+#heartScreen.broken #arrow { animation: arrowShoot .8s forwards; }
 @keyframes arrowShoot {
   0% { left: -60%; opacity: 0; }
   15% { opacity: 1; }
   100% { left: 125%; opacity: 0; }
 }
-
 #heartScreen.broken #heart {
   animation: breakHeart .8s .25s forwards;
 }
-
 @keyframes breakHeart {
   0% { transform: scale(1); opacity: 1; }
   35% { transform: scale(1.15) rotate(12deg); }
   100% { transform: scale(.1) rotate(-30deg); opacity: 0; }
 }
-
 .fragments {
   position: absolute;
   inset: 0;
   pointer-events: none;
 }
-
 .fragments span {
   position: absolute;
   top: 40%;
   opacity: 0;
 }
-
-#heartScreen.broken .fragments span {
-  animation: fragments .9s .5s forwards;
-}
-
 .fragments span:nth-child(1) { left: 20%; --x: -65px; }
 .fragments span:nth-child(2) { left: 70%; --x: 65px; }
 .fragments span:nth-child(3) { left: 35%; --x: -25px; }
 .fragments span:nth-child(4) { left: 60%; --x: 40px; }
-
+#heartScreen.broken .fragments span {
+  animation: fragments .9s .5s forwards;
+}
 @keyframes fragments {
   0% { opacity: 0; transform: translate(0,0) scale(.3); }
   20% { opacity: 1; }
   100% { opacity: 0; transform: translate(var(--x),-90px) scale(1.6); }
 }
-
 #afterBreak { display: none; }
 #heartScreen.broken #afterBreak { display: block; }
 #heartScreen.broken #heartInstruction,
 #heartScreen.broken #tapHeart { display: none; }
-
 .envelope {
   display: block;
   width: min(85vw,370px);
@@ -301,23 +255,20 @@ p {
   margin: 22px auto;
   animation: float 2s infinite ease-in-out;
 }
-
 @keyframes float {
   0%,100% { transform: translateY(0) rotate(-1deg); }
   50% { transform: translateY(-10px) rotate(1deg); }
 }
 
-/* LETTER */
+/* Letter */
 #letterScreen {
   align-items: flex-start;
   overflow-y: auto;
   padding-top: 85px;
 }
-
 .paper {
   width: 100%;
   max-width: 680px;
-  min-height: 650px;
   margin: auto;
   padding: clamp(38px,7vw,70px) clamp(24px,6vw,55px);
   background-image: var(--paper);
@@ -332,36 +283,24 @@ p {
   transform: translateY(100vh) rotate(4deg) scale(.8);
   filter: drop-shadow(0 12px 18px #230b2b66);
 }
-
 #letterScreen.letter-open .paper {
   animation: paperRise 1.7s ease-out forwards;
 }
-
 @keyframes paperRise {
   0% { opacity: 0; transform: translateY(100vh) rotate(4deg) scale(.8); }
   70% { opacity: 1; transform: translateY(-10px) rotate(-1deg) scale(1.02); }
   100% { opacity: 1; transform: translateY(0) rotate(0) scale(1); }
 }
-
 .paper h2 {
   font-size: clamp(23px,6vw,34px);
   color: #852d47;
   text-align: center;
 }
-
 .paper p { font-size: inherit; line-height: inherit; }
-
-#letterNext, #talkNext { display: none; }
+#letterNext { display: none; }
 #letterScreen.letter-open #letterNext { display: block; }
 
-.speech {
-  font-family: Arial,sans-serif;
-  font-size: clamp(19px,4.7vw,25px);
-  line-height: 1.9;
-  text-shadow: 0 3px 12px #220b29;
-}
-
-/* PHOTO MEMORY SCREEN */
+/* Gallery */
 #memoryScreen {
   display: none;
   min-height: 100vh;
@@ -376,15 +315,12 @@ p {
   background-attachment: fixed;
   overflow: visible;
 }
-
 #memoryScreen.active { display: block; }
-
 .memory-wrap {
   width: 100%;
   max-width: 850px;
   margin: 0 auto;
 }
-
 .memory-row {
   display: flex;
   align-items: center;
@@ -392,11 +328,16 @@ p {
   margin: 25px 0 65px;
   width: 100%;
 }
-
 .memory-row.left { justify-content: flex-start; }
-.memory-row.right { justify-content: flex-end; }
-.memory-row.center { justify-content: center; }
-
+.memory-row.right {
+  flex-direction: column;
+  align-items: flex-end;
+}
+.memory-row.center {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 .memory-row img {
   display: block;
   width: clamp(125px,38vw,260px);
@@ -405,8 +346,9 @@ p {
   border-radius: 12px;
   filter: drop-shadow(0 8px 14px #16091c99);
 }
-
-.memory-row .memory-text {
+.memory-row.right img { width: clamp(145px,43vw,280px); }
+.memory-row.center img { width: clamp(120px,34vw,230px); }
+.memory-text {
   flex: 1;
   min-width: 0;
   max-width: 430px;
@@ -415,71 +357,34 @@ p {
   line-height: 1.8;
   text-shadow: 0 2px 10px #18091d;
 }
-
-.memory-row.right {
-  flex-direction: column;
-  align-items: flex-end;
-}
-
-.memory-row.right img { width: clamp(145px,43vw,280px); }
-
 .memory-row.right .memory-text {
   flex: initial;
   width: min(100%,500px);
   text-align: right;
 }
-
-.memory-row.center {
-  flex-direction: row;
-  align-items: center;
-}
-
-.memory-row.center img { width: clamp(120px,34vw,230px); }
-
 .memory-ending {
   text-align: center;
-  margin: 140px auto 45px;
+  margin: 70px auto 45px;
   padding: 0 10px;
   font-family: Arial,sans-serif;
   font-size: clamp(22px,5.5vw,32px);
   line-height: 2.2;
   text-shadow: 0 3px 12px #1c0922;
 }
-
 .memory-ending .miss-you { margin-top: 25px; }
-
-.memory-next {
-  text-align: center;
-  padding: 15px 0 30px;
-}
-
+.memory-next { text-align: center; padding: 15px 0 30px; }
 .memory-next .btn { margin: 0 auto; }
-
 #futureScreen .content { max-width: 650px; }
 
 @media (max-width: 520px) {
   .content { padding: 20px 5px; }
   .key { height: 56px; }
   .paper { min-height: 700px; }
-
-  .memory-row {
-    gap: 12px;
-    margin-bottom: 55px;
-  }
-
-  .memory-row img {
-    width: 39%;
-    max-height: 260px;
-  }
-
-  .memory-row .memory-text {
-    font-size: clamp(15px,4vw,19px);
-    line-height: 1.65;
-  }
-
+  .memory-row { gap: 12px; margin-bottom: 55px; }
+  .memory-row img { width: 39%; max-height: 260px; }
+  .memory-text { font-size: clamp(15px,4vw,19px); line-height: 1.65; }
   .memory-row.right img { width: 48%; }
   .memory-row.center img { width: 40%; }
-  .memory-ending { margin-top: 100px; }
 }
 </style>
 </head>
@@ -491,7 +396,7 @@ p {
   style="position:fixed;width:1px;height:1px;left:-10px;bottom:-10px;border:0;opacity:.01">
 </iframe>
 
-<button id="musicToggle" type="button" aria-label="Toggle music">🔊</button>
+<button id="musicToggle" type="button" aria-label="Toggle music">🔇</button>
 <div id="kiss"><span>umhaaaaaa 💋😚🎀</span></div>
 
 <!-- HOME -->
@@ -516,7 +421,7 @@ p {
   </div>
 </section>
 
-<!-- PASSCODE -->
+<!-- PIN -->
 <section id="passcode" class="screen">
   <div class="content">
     <div class="lock">🗝️</div>
@@ -587,15 +492,14 @@ p {
 <!-- CHARACTER MESSAGE -->
 <section id="talkScreen" class="screen">
   <div class="content">
-    <div class="eyebrow">Made with all my love ♡</div>
-    <div class="teddy">🧸🎀</div>
+    <div class="teddy">🧸</div>
     <div class="speech">
-      <div>Happy birthday Sangam ✨💕</div>
-      <div>May God bless you 🪷🫂</div>
-      <div><strong>I lub uhhhhhhhhh 😚💋🎀</strong></div>
-      <div>hmr baccha 💗</div>
+      <p>Happy birthday Sangam ✨💕</p>
+      <p>May God bless you 🪷🫂</p>
+      <p>I lub uhhhhhhhhh 😚💋🎀</p>
+      <p>hmr baccha 💗</p>
     </div>
-    <button id="talkNext" class="btn">Next surprise ➜ 💕</button>
+    <button id="talkNext" class="btn">Next ➜ 💕</button>
   </div>
 </section>
 
@@ -611,7 +515,7 @@ p {
   </div>
 </section>
 
-<!-- MEMORY / PHOTO SCREEN -->
+<!-- FIVE PHOTO GALLERY -->
 <section id="memoryScreen" class="screen">
   <div class="memory-wrap">
 
@@ -669,19 +573,23 @@ p {
   "use strict";
 
   const PASSKEY = "0806";
+  const $ = id => document.getElementById(id);
+
   let pin = "";
-  let musicOn = true;
+  let musicOn = false;
   let musicStarted = false;
   let heartSequenceStarted = false;
 
-  const $ = id => document.getElementById(id);
   const song = $("song");
   const musicToggle = $("musicToggle");
 
-  // MUSIC
+  // MUSIC TOGGLE
   function startMusic() {
     if (!musicOn || musicStarted || !song) return;
-    song.src = "https://www.youtube.com/embed/JUyostfvwMw?autoplay=1&loop=1&playlist=JUyostfvwMw&controls=0&playsinline=1";
+
+    song.src =
+      "https://www.youtube.com/embed/JUyostfvwMw?autoplay=1&loop=1&playlist=JUyostfvwMw&controls=0&playsinline=1";
+
     musicStarted = true;
   }
 
@@ -693,17 +601,15 @@ p {
   musicToggle.addEventListener("click", function () {
     musicOn = !musicOn;
     musicToggle.textContent = musicOn ? "🔊" : "🔇";
+
     if (musicOn) startMusic();
     else stopMusic();
   });
 
-  document.addEventListener("pointerdown", function (event) {
-    if (!event.target.closest("#musicToggle")) startMusic();
-  }, { once: true });
-
-  // NAVIGATION: all screens
+  // NAVIGATION: switch between screens
   window.showScreen = function (id) {
     const target = $(id);
+
     if (!target) {
       console.error("Screen not found:", id);
       return;
@@ -724,21 +630,19 @@ p {
         startHeartSequence();
       } else {
         $("kiss").classList.remove("show");
+        target.classList.remove("broken");
+        target.classList.add("heart-ready");
       }
     }
 
     if (id === "letterScreen") {
-      $("letterScreen").classList.remove("letter-open");
-      void $("letterScreen").offsetWidth;
-      $("letterScreen").classList.add("letter-open");
-    }
-
-    if (id === "talkScreen") {
-      $("talkNext").style.display = "block";
+      target.classList.remove("letter-open");
+      void target.offsetWidth;
+      target.classList.add("letter-open");
     }
   };
 
-  // PASSCODE
+  // PIN KEYPAD
   function updateDots() {
     document.querySelectorAll("#passcode .dot").forEach(function (dot, index) {
       dot.classList.toggle("filled", index < pin.length);
@@ -753,4 +657,31 @@ p {
 
   function checkPin() {
     if (pin.length !== 4) {
-    
+      $("pinMessage").textContent = "Enter all 4 digits 💗";
+      return;
+    }
+
+    if (pin === PASSKEY) {
+      $("pinMessage").textContent = "";
+      window.showScreen("heartScreen");
+    } else {
+      $("pinMessage").textContent = "Wrong PIN, try again 🥺";
+      pin = "";
+      updateDots();
+    }
+  }
+
+  document.querySelectorAll("[data-digit]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      if (pin.length >= 4) return;
+
+      pin += button.dataset.digit;
+      updateDots();
+
+      if (pin.length === 4) checkPin();
+    });
+  });
+
+  $("deleteDigit").addEventListener("click", function () {
+    pin = pin.slice(0, -1);
+    upd
